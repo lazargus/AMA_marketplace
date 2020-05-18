@@ -3,6 +3,6 @@ class Racket < ApplicationRecord
   has_many :racket_reviews, through: :bookings
   belongs_to :user
 
-  validates :description, :availability, :price, :location, :model, presence: true
+  validates :description, :price, :location, :model, presence: true
 
 end

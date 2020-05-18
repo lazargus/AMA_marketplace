@@ -22,12 +22,8 @@ ActiveRecord::Schema.define(version: 2020_05_18_153725) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "user_id"
-    t.bigint "user_review_id"
-    t.bigint "racket_review_id"
     t.index ["racket_id"], name: "index_bookings_on_racket_id"
-    t.index ["racket_review_id"], name: "index_bookings_on_racket_review_id"
     t.index ["user_id"], name: "index_bookings_on_user_id"
-    t.index ["user_review_id"], name: "index_bookings_on_user_review_id"
   end
 
   create_table "racket_reviews", force: :cascade do |t|
@@ -35,6 +31,8 @@ ActiveRecord::Schema.define(version: 2020_05_18_153725) do
     t.integer "rating"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "booking_id"
+    t.index ["booking_id"], name: "index_racket_reviews_on_booking_id"
   end
 
   create_table "rackets", force: :cascade do |t|
@@ -55,6 +53,8 @@ ActiveRecord::Schema.define(version: 2020_05_18_153725) do
     t.integer "rating"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "booking_id"
+    t.index ["booking_id"], name: "index_user_reviews_on_booking_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -71,9 +71,9 @@ ActiveRecord::Schema.define(version: 2020_05_18_153725) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "bookings", "racket_reviews"
   add_foreign_key "bookings", "rackets"
-  add_foreign_key "bookings", "user_reviews"
   add_foreign_key "bookings", "users"
+  add_foreign_key "racket_reviews", "bookings"
   add_foreign_key "rackets", "users"
+  add_foreign_key "user_reviews", "bookings"
 end

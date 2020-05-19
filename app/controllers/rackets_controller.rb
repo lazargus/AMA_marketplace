@@ -1,4 +1,6 @@
 class RacketsController < ApplicationController
+  skip_before_action :authenticate_user!, only: :index
+
   def index
     @rackets = Racket.all
   end

@@ -1,0 +1,12 @@
+<div class="container">
+  <h1>Add a new racket</h1>
+  <%= simple_form_for(@racket) do |f| %>
+  <%= f.input :description %>
+  <%= f.input :price %>
+  <%= f.input :location %>
+  <%= f.input :model %>
+  <%= f.input :year %>
+  <%= f.input :availability %>
+  <%= f.submit "Add this racket", class: "btn btn-primary" %>
+  <% end %>
+</div>

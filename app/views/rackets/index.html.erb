@@ -7,10 +7,15 @@
       <div class="card-racket-container">
         <% @rackets.each do |racket| %>
           <div class="card-racket">
-            <img src="https://images.unsplash.com/photo-1558594187-6ac6484bf5d4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1334&q=80" />
+            <% if racket.photo.attached? %>
+              <%= cl_image_tag racket.photo.key, height: 300, width: 400, crop: :fill, alt: "alttext" %>
+            <% end %>
             <div class="card-racket-infos">
               <div>
                 <h2><%= racket.model %></h2>
+                <%= link_to racket_path(racket), method: :delete, data: { confirm: "Are you sure?" } do %>
+                  <i class="fa fa-trash destroy_racket"></i>
+                <% end %>
                 <p><i class="fas fa-map-marker-alt"></i> <%= racket.location %></p>
                 <h2 class="card-racket-pricing"><%= racket.price %>€</h2>
               </div>

@@ -2,56 +2,63 @@
   <div class='text-center m-4'>
     <h1>My Bookings</h1>
   </div>
-  <div class="row justify-content-center">
-    <div class="card-racket-container">
-      <% @bookings.each do |booking| %>
-      <% number_of_days = booking.end_date - booking.start_date %>
-      <% price = booking.racket.price * number_of_days %>
-      <div class="card-racket m-2">
-        <% if booking.racket.photo.attached? %>
-          <%= cl_image_tag booking.racket.photo.key, height: 300, width: 400, crop: :fill, alt: "alttext" %>
-        <% end %>
-        <div class="card-racket-infos">
-          <div>
-            <h5><%= booking.racket.model %></h5>
-            <h6>Owner : <%= booking.racket.user.first_name %> <%= booking.racket.user.last_name %></h6>
-            <p>from <%= booking.start_date %></p>
-            <p>to <%= booking.end_date %></p>
-            <h6><%= price.to_i %>€</h6>
-            <%= link_to "Cancel", booking_path(booking), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger" %>
-          </div>
+  <% @bookings.each do |booking| %>
+  <div class="row my-3">
+    <div class="col-sm-12">
+      <div class="card-booking">
+        <% number_of_days = booking.end_date - booking.start_date %>
+        <% price = booking.racket.price * number_of_days %>
+        <div>
+          <% if booking.racket.photo.attached? %>
+            <%= cl_image_tag booking.racket.photo.key, alt: "alttext" %>
+          <% end %>
         </div>
+          <div class="card-booking-infos">
+            <div>
+              <h5><%= booking.racket.model %></h5>
+              <h6>Owner : <%= booking.racket.user.first_name %> <%= booking.racket.user.last_name %></h6>
+              <p>from <%= booking.start_date %></p>
+              <p>to <%= booking.end_date %></p>
+              <h6><%= price.to_i %>€</h6>
+            </div>
+            <div>
+              <%= link_to "Cancel", booking_path(booking), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger" %>
+            </div>
+          </div>
       </div>
-      <% end %>
     </div>
   </div>
+<% end %>
 
   <div class='text-center m-4'>
     <h1>My Rentals</h1>
   </div>
-  <div class="row justify-content-center">
-    <div class="card-racket-container">
-      <% @rentals.each do |rental| %>
-      <% number_of_days = rental.end_date - rental.start_date %>
-      <% price = rental.racket.price * number_of_days %>
-      <div class="card-racket m-2">
-        <% if rental.racket.photo.attached? %>
-          <%= cl_image_tag rental.racket.photo.key, height: 300, width: 400, crop: :fill, alt: "alttext" %>
-        <% end %>
-        <div class="card-racket-infos">
-          <div>
-            <h5><%= rental.racket.model %></h5>
-            <h6>Renter : <%= rental.user.first_name %> <%= rental.user.last_name %></h6>
-            <p>from <%= rental.start_date %></p>
-            <p>to <%= rental.end_date %></p>
-            <h6><%= price.to_i %>€</h6>
-            <%= link_to "Cancel", booking_path(rental), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger" %>
-          </div>
+  <% @rentals.each do |rental| %>
+    <div class="row my-3">
+      <div class="col-sm-12">
+        <div class="card-booking">
+          <% number_of_days = rental.end_date - rental.start_date %>
+          <% price = rental.racket.price * number_of_days %>
+        <div>
+          <% if rental.racket.photo.attached? %>
+            <%= cl_image_tag rental.racket.photo.key, alt: "alttext" %>
+          <% end %>
+        </div>
+          <div class="card-booking-infos">
+            <div>
+              <h5><%= rental.racket.model %></h5>
+              <h6>Renter : <%= rental.user.first_name %> <%= rental.user.last_name %></h6>
+              <p>from <%= rental.start_date %></p>
+              <p>to <%= rental.end_date %></p>
+              <h6><%= price.to_i %>€</h6>
+            </div>
+            <div>
+              <%= link_to "Decline", booking_path(rental), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger" %>
+              </div>
+            </div>
         </div>
       </div>
-      <% end %>
     </div>
-  </div>
+  <% end %>
 </div>
 
-</div>

@@ -12,7 +12,7 @@ class BookingsController < ApplicationController
     @booking.racket = @racket
     @booking.user = @user
     if @booking.save
-      redirect_to root_path
+      redirect_to bookings_path
     else
       render "rackets/show"
     end

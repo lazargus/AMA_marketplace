@@ -1,35 +1,36 @@
-<div class="container">
-  <div class='d-flex justify-content-between mt-2 mb-2'>
-    <h1>All rackets</h1>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url(https://images.unsplash.com/photo-1581079708051-9784b310349f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1636&q=80);">
+  <div class="container">
+    <h1><strong>AMA</strong></h1>
+    <h3>Enjoy playing anytime, anywhere!</h3>
+    <p>Stop thinking of wheter or not you should bring your tennis racket with you.
+      Anywhere you go, AMA is here to provide you the best rackets nearby!</p>
     <%= link_to 'Add a new racket', new_racket_path, class:'btn btn-primary'  %>
-
   </div>
-  <div class="row justify-content-center">
-      <div class="card-racket-container">
-        <% @rackets.each do |racket| %>
-          <div class="card-racket">
-            <% if racket.photo.attached? %>
-              <%= cl_image_tag racket.photo.key, height: 300, width: 400, crop: :fill, alt: "alttext" %>
-            <% end %>
-            <div class="card-racket-infos">
-              <div>
-                <h2><%= racket.model %></h2>
-                <%= link_to racket_path(racket), method: :delete, data: { confirm: "Are you sure?" } do %>
-                  <i class="fa fa-trash destroy_racket"></i>
-                <% end %>
-                <p><i class="fas fa-map-marker-alt"></i> <%= racket.location %></p>
+</div>
 
-                <h2 class="card-racket-pricing"><%= racket.price %>€</h2>
-                <%= link_to edit_racket_path(racket.id), class: 'pull-right btn btn-default' do %>
-                  <i class="fa fa-pencil"></i> Edit this racket
+<div class="container">
+  <div class="row justify-content-center mb-2 mt-2">
+    <div class="card-racket-container">
+      <% @rackets.each do |racket| %>
+        <div class="card-racket">
+          <% if racket.photo.attached? %>
+            <%= cl_image_tag racket.photo.key, height: 300, width: 400, class:'cloudinary-image', alt: "alttext" %>
+            <div class="symbols">
+              <%= link_to edit_racket_path(racket.id), class: 'pull-right btn btn-default' do %>
+                <i class="far fa-edit"></i>
               <% end %>
-
-              </div>
+              <%= link_to racket_path(racket), method: :delete, data: { confirm: "Are you sure?" } do %>
+                <i class="fa fa-trash "></i>
+              <% end %>
             </div>
-          </div>
         <% end %>
+        <h2><%= link_to racket.model, racket_path(racket) %></h2>
+        <div class="card-racket-infos">
+          <p><i class="fas fa-map-marker-alt"></i> <%= racket.location %></p>
+          <h2 class="card-racket-pricing"><%= racket.price %>€</h2>
+        </div>
       </div>
-    </div>
+    <% end %>
   </div>
 </div>
 

@@ -11,6 +11,7 @@
   height: 300px;
   width: 300px;
   border-radius: 10px;
+  position: relative;
 }
 
 .card-racket > img {
@@ -20,9 +21,10 @@
 }
 
 .card-racket h2 {
-  font-size: 16px;
+  font-size: 14px;
   font-weight: bold;
   margin: 0;
+  padding: 10px 15px;
 }
 
 .card-racket p {
@@ -31,24 +33,39 @@
   margin: 0;
 }
 
-.card-racket .fas {
-  font-size: 11px;
+.card-racket .fa {
+  font-size: 15px;
   opacity: 0.5;
+  color: black;
 }
 
 .card-racket .card-racket-infos {
-  padding: 16px;
+  padding: 8px 10px;
   display: flex;
   justify-content: space-between;
-  align-items: flex-end;
+  align-items: center;
   position: relative;
 }
 
-.card-racket-infos .card-racket-user {
+// .card-racket-infos .card-racket-user {
+//   position: absolute;
+//   right: 16px;
+//   top: -20px;
+//   width: 40px;
+// }
+
+.cloudinary-image {
+  object-fit: contain !important;
+}
+
+// .image-symbols {
+//   position: absolute;
+// }
+
+.symbols {
   position: absolute;
-  right: 16px;
-  top: -20px;
-  width: 40px;
+  top: 0;
+  right: 18px;
 }
 
 

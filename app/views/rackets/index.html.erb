@@ -2,6 +2,7 @@
   <div class='d-flex justify-content-between mt-2 mb-2'>
     <h1>All rackets</h1>
     <%= link_to 'Add a new racket', new_racket_path, class:'btn btn-primary'  %>
+    
   </div>
   <div class="row justify-content-center">
       <div class="card-racket-container">
@@ -17,7 +18,12 @@
                   <i class="fa fa-trash destroy_racket"></i>
                 <% end %>
                 <p><i class="fas fa-map-marker-alt"></i> <%= racket.location %></p>
+
                 <h2 class="card-racket-pricing"><%= racket.price %>€</h2>
+                <%= link_to edit_racket_path(racket.id), class: 'pull-right btn btn-default' do %>
+                  <i class="fa fa-pencil"></i> Edit this racket
+              <% end %>
+              
               </div>
             </div>
           </div>

@@ -1,6 +1,6 @@
 <div class="container">
+  <h1>All rackets</h1>
   <div class="row justify-content-center">
-    <h1>All rackets</h1>
       <div class="card-racket-container">
         <% @rackets.each do |racket| %>
           <div class="card-racket">
@@ -8,7 +8,7 @@
             <div class="card-racket-infos">
               <div>
                 <h2><%= racket.model %></h2>
-                <p> <%= racket.location %></p>
+                <p><i class="fas fa-map-marker-alt"></i> <%= racket.location %></p>
                 <h2 class="card-racket-pricing"><%= racket.price %>€</h2>
               </div>
             </div>

@@ -15,6 +15,18 @@ class RacketsController < ApplicationController
   end
 
   def create
+    @racket = Racket.new(racket_params)
+    @racket.user = current_user
+    if @racket.save!
+      redirect_to racket_path(@racket)
+    else
+      render :new
+    end
+  end
 
+  private
+
+  def racket_params
+    params.require(:racket).permit(:description, :price, :location, :model, :year, :photo, :availability)
   end
 end

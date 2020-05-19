@@ -1,12 +1,14 @@
 class RacketsController < ApplicationController
-  skip_before_action :authenticate_user!, only: :index
-  before_action :set_racket, only: [ :show, :edit, :update, :destroy ]
+  skip_before_action :authenticate_user!, only: [ :index, :show ]
+
 
   def index
     @rackets = Racket.all
   end
 
   def show
+    @booking = Booking.new
+    @racket = Racket.find(params[:id])
   end
 
   def new
@@ -14,9 +16,13 @@ class RacketsController < ApplicationController
   end
 
   def create
-  end
-
-  def edit
+    @racket = Racket.new(racket_params)
+    @racket.user = current_user
+    if @racket.save!
+      redirect_to racket_path(@racket)
+    else
+      render :new
+    end
   end
 
   def update
@@ -24,9 +30,8 @@ class RacketsController < ApplicationController
       redirect_to racket_path(@racket), notice: 'Racket was successfully updated.'
     else
       render :edit
-    end
   end
-
+  
   def destroy
       @racket = Racket.find(params[:id])
       @racket.destroy
@@ -35,12 +40,8 @@ class RacketsController < ApplicationController
 
   private
 
-  def set_racket
-      @racket = Racket.find(params[:id])
-  end
-
   def racket_params
-    params.require(:racket).permit(:description, :model, :year, :price, :location)
+    params.require(:racket).permit(:description, :price, :location, :model, :year, :photo, :availability)
   end
 
 end

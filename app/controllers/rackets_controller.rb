@@ -1,5 +1,6 @@
 class RacketsController < ApplicationController
-  skip_before_action :authenticate_user!, only: :index
+  skip_before_action :authenticate_user!, only: [ :index, :show ]
+
 
   def index
     @rackets = Racket.all
@@ -24,9 +25,23 @@ class RacketsController < ApplicationController
     end
   end
 
+  def update
+    if @racket.update(racket_params)
+      redirect_to racket_path(@racket), notice: 'Racket was successfully updated.'
+    else
+      render :edit
+  end
+  
+  def destroy
+      @racket = Racket.find(params[:id])
+      @racket.destroy
+      redirect_to root_path, notice: 'Racket was successfully destroyed.'
+  end
+
   private
 
   def racket_params
     params.require(:racket).permit(:description, :price, :location, :model, :year, :photo, :availability)
   end
+
 end

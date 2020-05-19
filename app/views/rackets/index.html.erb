@@ -1,19 +1,20 @@
 <div class="container">
-  <div class="row">
-    <div class="col-sm-10 col-md-10">
-      <h1>All rackets</h1>
-      <% @rackets.each do |racket| %>
-        <div class="card-racket">
-          <img src="https://images.unsplash.com/photo-1558594187-6ac6484bf5d4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1334&q=80" />
-          <div class="card-racket-infos">
-            <div>
-              <h2><%= racket.model %></h2>
-              <p> <%= racket.description %></p>
+  <div class="row justify-content-center">
+    <h1>All rackets</h1>
+      <div class="card-racket-container">
+        <% @rackets.each do |racket| %>
+          <div class="card-racket">
+            <img src="https://images.unsplash.com/photo-1558594187-6ac6484bf5d4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1334&q=80" />
+            <div class="card-racket-infos">
+              <div>
+                <h2><%= racket.model %></h2>
+                <p> <%= racket.location %></p>
+                <h2 class="card-racket-pricing"><%= racket.price %>€</h2>
+              </div>
             </div>
-            <h2 class="card-racket-pricing"><%= racket.price %></h2>
           </div>
-        </div>
-      <% end %>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>

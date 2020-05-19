@@ -1,22 +1,22 @@
 <div class="container">
-  <div class="row mt-5">
-    <div class="col-3 my-auto">
+  <div class="d-flex justify-content-between">
+    <div>
       <% if @racket.photo.attached? %>
-        <%= cl_image_tag @racket.photo.key, height: 300, width: 400, crop: :fill, alt: "alttext" %>
+        <%= cl_image_tag @racket.photo.key, height: 400, width: 200, alt: "image of " %>
       <% end %>
     </div>
 
 
-    <div class="col-5">
+    <div id="raquet-info">
       <h3><%= @racket.model %></h3>
       <h3><%= @racket.price %>€</h3>
       <p>Description: </p>
       <p><%= @racket.description %></p>
     </div>
 
-    <div class="col-4">
+    <div class="card-racket" id="racket-booking-form">
+      <h4 class="mt-4"><strong>Book racket:</strong></h4>
       <%= render "/shared/booking_form", booking: @booking %>
-
     </div>
   <br>
 </div>
@@ -25,5 +25,6 @@
   <div class="row mt-4">
     <img id="map" class="offset-2" src='https://api.mapbox.com/styles/v1/mapbox/streets-v11/static/2.3381,48.8693,10.45,0,0/1200x1000?access_token=pk.eyJ1IjoiZnJhbmNvaXMtZGV6IiwiYSI6ImNrYWRwMWUzdTA5bHYydW54aWNicGUxaWkifQ.y8rHLHtGkEmYDYRQrLH4fQ'>
   </div>
+</div>
 
 

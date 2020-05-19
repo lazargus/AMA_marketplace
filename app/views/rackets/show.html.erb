@@ -1,10 +1,21 @@
 <div class="container">
-  <div class="row">
-    <div class="col-6">
-      <h1><%= @racket.model %></h1>
+  <div class="row mt-5">
+    <div class="col-3 my-auto">
+      <%= cl_image_tag @racket.photo.key, height: 300, width: 400, crop: :fill, alt: "alttext" %>
     </div>
-    <div class="col-6">
-      <img id="map" src="https://api.mapbox.com/<%= @racket.location %>?access_token=pk.eyJ1IjoiZnJhbmNvaXMtZGV6IiwiYSI6ImNrOW81bndpOTA4bWQzZ3BwOTh0OG4ydWMifQ.iz9aQ98HvOIDsVSZYjbIQg" alt="<%= @racket.location %>">
+    <div class="col-5">
+      <h3><%= @racket.model %></h3>
+      <h3><%= @racket.price %>€</h3>
+      <p>Description: </p>
+      <p><%= @racket.description %></p>
     </div>
+    <div class="col-4">
+    </div>
+  </div>
+  <br>
+  <h3>Location:</h3>
+  <hr>
+  <div class="row mt-4">
+    <img id="map" class="offset-2" src='https://api.mapbox.com/styles/v1/mapbox/streets-v11/static/2.3381,48.8693,10.45,0,0/1200x1000?access_token=pk.eyJ1IjoiZnJhbmNvaXMtZGV6IiwiYSI6ImNrYWRwMWUzdTA5bHYydW54aWNicGUxaWkifQ.y8rHLHtGkEmYDYRQrLH4fQ'>
   </div>
 </div>

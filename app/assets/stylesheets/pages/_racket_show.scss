@@ -2,9 +2,15 @@
   height: 50vh;
   position: sticky;
   top: 0;
-  margin-top: 30px;
+  margin-top: 20px;
 }
 
 #raquet-info {
   width: 450px;
+}
+
+.racket-show-image {
+  object-fit: contain;
+  height: 300px;
+  width: 200px;
 }

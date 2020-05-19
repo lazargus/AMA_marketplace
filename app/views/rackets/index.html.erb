@@ -22,17 +22,15 @@
               <%= link_to racket_path(racket), method: :delete, data: { confirm: "Are you sure?" } do %>
                 <i class="fa fa-trash "></i>
               <% end %>
-              </div>
             </div>
-          <% end %>
-          <h2><%= racket.model %></h2>
-          <div class="card-racket-infos">
-              <p><i class="fas fa-map-marker-alt"></i> <%= racket.location %></p>
-              <h2 class="card-racket-pricing"><%= racket.price %>€</h2>
-          </div>
+        <% end %>
+        <h2><%= link_to racket.model, racket_path(racket) %></h2>
+        <div class="card-racket-infos">
+          <p><i class="fas fa-map-marker-alt"></i> <%= racket.location %></p>
+          <h2 class="card-racket-pricing"><%= racket.price %>€</h2>
         </div>
-      <% end %>
-    </div>
+      </div>
+    <% end %>
   </div>
 </div>
 

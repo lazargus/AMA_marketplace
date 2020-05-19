@@ -1,8 +1,8 @@
 <div class="container">
-  <div class="d-flex justify-content-between">
+  <div class="d-flex justify-content-between mt-5">
     <div>
       <% if @racket.photo.attached? %>
-        <%= cl_image_tag @racket.photo.key, height: 400, width: 200, alt: "image of " %>
+        <%= cl_image_tag @racket.photo.key, class: 'racket-show-image', alt: "image of " %>
       <% end %>
     </div>
 
@@ -14,7 +14,7 @@
       <p><%= @racket.description %></p>
     </div>
 
-    <div class="card-racket" id="racket-booking-form">
+    <div class="card-racket p-3" id="racket-booking-form">
       <h4 class="mt-4"><strong>Book racket:</strong></h4>
       <%= render "/shared/booking_form", booking: @booking %>
     </div>

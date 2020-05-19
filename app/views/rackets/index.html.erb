@@ -1,5 +1,8 @@
 <div class="container">
-  <h1>All rackets</h1>
+  <div class='d-flex justify-content-between mt-2 mb-2'>
+    <h1>All rackets</h1>
+    <%= link_to 'Add a new racket', new_racket_path, class:'btn btn-primary'  %>
+  </div>
   <div class="row justify-content-center">
       <div class="card-racket-container">
         <% @rackets.each do |racket| %>

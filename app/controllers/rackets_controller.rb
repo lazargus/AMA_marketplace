@@ -26,10 +26,12 @@ class RacketsController < ApplicationController
   end
 
   def update
+    @racket = Racket.find(params[:id])
     if @racket.update(racket_params)
       redirect_to racket_path(@racket), notice: 'Racket was successfully updated.'
     else
       render :edit
+    end
   end
   
   def destroy

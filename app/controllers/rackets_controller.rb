@@ -6,6 +6,7 @@ class RacketsController < ApplicationController
   end
 
   def show
+    @booking = Booking.new
     @racket = Racket.find(params[:id])
   end
 

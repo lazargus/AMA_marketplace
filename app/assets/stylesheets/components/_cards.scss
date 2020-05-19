@@ -1,0 +1,52 @@
+.card-racket-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 16px;
+}
+
+.card-racket {
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  height: 300px;
+  width: 300px;
+  border-radius: 10px;
+}
+
+.card-racket > img {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.card-racket h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-racket p {
+  font-size: 12px;
+  opacity: .7;
+  margin: 0;
+}
+
+.card-racket .fas {
+  font-size: 11px;
+  opacity: 0.5;
+}
+
+.card-racket .card-racket-infos {
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
+}
+
+.card-racket-infos .card-racket-user {
+  position: absolute;
+  right: 16px;
+  top: -20px;
+  width: 40px;
+}

@@ -1,0 +1,22 @@
+<div class="container">
+  <h1>All rackets</h1>
+  <div class="row justify-content-center">
+      <div class="card-racket-container">
+        <% @rackets.each do |racket| %>
+          <div class="card-racket">
+            <img src="https://images.unsplash.com/photo-1558594187-6ac6484bf5d4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1334&q=80" />
+            <div class="card-racket-infos">
+              <div>
+                <h2><%= racket.model %></h2>
+                <p><i class="fas fa-map-marker-alt"></i> <%= racket.location %></p>
+                <h2 class="card-racket-pricing"><%= racket.price %>€</h2>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
+

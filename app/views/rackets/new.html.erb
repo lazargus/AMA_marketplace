@@ -3,7 +3,7 @@
   <%= simple_form_for(@racket) do |f| %>
   <%= f.input :description %>
   <%= f.input :price %>
-  <%= f.input :location %>
+  <%= f.input :location, label: 'City' %>
   <%= f.input :model %>
   <%= f.input :year %>
   <%= f.input :photo, as: :file %>

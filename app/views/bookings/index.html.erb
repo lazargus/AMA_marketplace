@@ -5,14 +5,18 @@
   <div class="row justify-content-center">
       <div class="card-racket-container">
         <% @bookings.each do |booking| %>
+        <% number_of_days = booking.end_date - booking.start_date %>
+        <% price = booking.racket.price * number_of_days %>
           <div class="card-racket m-2">
             <% if booking.racket.photo.attached? %>
               <%= cl_image_tag booking.racket.photo.key, height: 300, width: 400, crop: :fill, alt: "alttext" %>
             <% end %>
           <div class="card-racket-infos">
             <div>
-              <p><%= booking.start_date %></p>
-              <p><%= booking.end_date %></p>
+              <h5><%= booking.racket.model %></h4>
+              <p>from <%= booking.start_date %></p>
+              <p>to <%= booking.end_date %></p>
+              <h6><%= price.to_i %>€</h6>
             </div>
           </div>
         </div>
@@ -20,3 +24,5 @@
     </div>
   </div>
 </div>
+
+

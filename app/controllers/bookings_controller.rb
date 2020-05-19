@@ -1,5 +1,9 @@
 class BookingsController < ApplicationController
 
+  def index
+    @bookings = current_user.bookings
+  end
+
   def create
     @racket = Racket.find(params[:racket_id])
     @user = current_user
@@ -11,6 +15,12 @@ class BookingsController < ApplicationController
     else
       render "rackets/show"
     end
+  end
+
+  def destroy
+    @booking = Booking.find(params[:id])
+    @booking.destroy
+    redirect_to bookings_path
   end
 
   private

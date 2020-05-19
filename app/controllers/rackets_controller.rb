@@ -30,7 +30,7 @@ class RacketsController < ApplicationController
   def destroy
       @racket = Racket.find(params[:id])
       @racket.destroy
-      redirect_to rackets_path, notice: 'Racket was successfully destroyed.'
+      redirect_to root_path, notice: 'Racket was successfully destroyed.'
   end
 
   private

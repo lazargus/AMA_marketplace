@@ -2,6 +2,11 @@
   <div class="row">
     <div class="col-6">
       <h1><%= @racket.model %></h1>
+
+        <%= link_to racket_path(@racket), method: :delete, data: { confirm: "Are you sure?" } do %>
+          <i class="fa fa-trash destroy_racket"></i>
+        <% end %>
+    
     </div>
     <div class="col-6">
       <img id="map" src="https://api.mapbox.com/<%= @racket.location %>?access_token=pk.eyJ1IjoiZnJhbmNvaXMtZGV6IiwiYSI6ImNrOW81bndpOTA4bWQzZ3BwOTh0OG4ydWMifQ.iz9aQ98HvOIDsVSZYjbIQg" alt="<%= @racket.location %>">

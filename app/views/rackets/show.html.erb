@@ -1,27 +1,29 @@
 <div class="container">
   <div class="row mt-5">
     <div class="col-3 my-auto">
-    <%= cl_image_tag @racket.photo.key, height: 300, width: 400, crop: :fill, alt: "alttext" %>
+      <% if @racket.photo.attached? %>
+        <%= cl_image_tag @racket.photo.key, height: 300, width: 400, crop: :fill, alt: "alttext" %>
+      <% end %>
+    </div>
+
 
     <div class="col-5">
       <h3><%= @racket.model %></h3>
-        <%= link_to racket_path(@racket), method: :delete, data: { confirm: "Are you sure?" } do %>
-          <i class="fa fa-trash destroy_racket"></i>
-        <% end %>
       <h3><%= @racket.price %>€</h3>
       <p>Description: </p>
       <p><%= @racket.description %></p>
     </div>
+
     <div class="col-4">
+      <%= render "/shared/booking_form", booking: @booking %>
+
     </div>
-  </div>
   <br>
+</div>
   <h3>Location:</h3>
   <hr>
   <div class="row mt-4">
     <img id="map" class="offset-2" src='https://api.mapbox.com/styles/v1/mapbox/streets-v11/static/2.3381,48.8693,10.45,0,0/1200x1000?access_token=pk.eyJ1IjoiZnJhbmNvaXMtZGV6IiwiYSI6ImNrYWRwMWUzdTA5bHYydW54aWNicGUxaWkifQ.y8rHLHtGkEmYDYRQrLH4fQ'>
   </div>
-</div>
 
 
-<%= render "/shared/booking_form", booking: @booking %>

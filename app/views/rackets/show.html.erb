@@ -1,0 +1,10 @@
+<div class="container">
+  <div class="row">
+    <div class="col-6">
+      <h1><%= @racket.model %></h1>
+    </div>
+    <div class="col-6">
+      <img id="map" src="https://api.mapbox.com/<%= @racket.location %>?access_token=pk.eyJ1IjoiZnJhbmNvaXMtZGV6IiwiYSI6ImNrOW81bndpOTA4bWQzZ3BwOTh0OG4ydWMifQ.iz9aQ98HvOIDsVSZYjbIQg" alt="<%= @racket.location %>">
+    </div>
+  </div>
+</div>

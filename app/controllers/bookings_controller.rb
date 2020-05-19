@@ -1,5 +1,9 @@
 class BookingsController < ApplicationController
 
+  def index
+    @bookings = current_user.bookings
+  end
+
   def create
     @racket = Racket.find(params[:racket_id])
     @user = current_user

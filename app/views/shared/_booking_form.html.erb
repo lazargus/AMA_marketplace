@@ -1,5 +1,5 @@
 <%= simple_form_for([@racket, @booking]) do |f| %>
-  <%= f.input  :start_date %>
-  <%= f.input  :end_date %>
+  <%= f.input  :start_date, :order => [:day, :month, :year] %>
+  <%= f.input  :end_date, :order => [:day, :month, :year] %>
   <%= f.submit class: "btn btn-primary"%>
 <% end %>

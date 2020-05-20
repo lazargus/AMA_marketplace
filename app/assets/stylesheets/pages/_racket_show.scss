@@ -16,6 +16,8 @@
   object-fit: contain !important;
   height: 200px;
   width: 200px;
+  margin-top: auto;
+  margin-bottom: auto;
 }
 
 .price-tag {
@@ -24,4 +26,8 @@
 
 #description-tag {
   opacity: 0.7;
+}
+
+.racket-description-container {
+  width: 775px;
 }

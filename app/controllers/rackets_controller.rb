@@ -3,11 +3,20 @@ class RacketsController < ApplicationController
   before_action :set_racket, only: [ :show, :edit, :update, :destroy ]
 
   def index
-    @rackets = Racket.all
+    @rackets = Racket.geocoded
   end
 
   def show
     @booking = Booking.new
+
+    # @markers = @rackets.map do |racket|
+    #   {
+    #     lat: racket.latitude,
+    #     lng: racket.longitude
+    #   }
+    # end
+
+    @marker = { lat: @racket.latitude, lng: @racket.longitude }
   end
 
   def new
@@ -34,7 +43,7 @@ class RacketsController < ApplicationController
       render :edit
     end
   end
-  
+
   def destroy
     @racket.destroy
     redirect_to root_path, notice: 'Racket was successfully destroyed.'

@@ -20,7 +20,11 @@
         <h3>Location:</h3>
         <hr>
         <div class="row mt-4">
-          <img id="map" class="offset-1" src='https://api.mapbox.com/styles/v1/mapbox/streets-v11/static/2.3381,48.8693,10.45,0,0/1200x1000?access_token=pk.eyJ1IjoiZnJhbmNvaXMtZGV6IiwiYSI6ImNrYWRwMWUzdTA5bHYydW54aWNicGUxaWkifQ.y8rHLHtGkEmYDYRQrLH4fQ'>
+          <div id="map"
+               class="container-map"
+               data-markers="<%= @marker.to_json %>"
+               data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+          </div>
         </div>
       </div>
     </div>

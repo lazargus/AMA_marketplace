@@ -1,3 +1,13 @@
-#map {
-  height: 50vh;
+.container-map {
+  width: 700px;
+  height: 400px;
+  margin: auto;
+}
+
+.marker {
+  background-image: url('racket_marker.svg');
+  background-size: cover;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
 }

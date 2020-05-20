@@ -11,6 +11,13 @@
   width: 40px;
 }
 
+.avatar {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  object-position: center;
+}
+
 #add-button {
   background-color: #93E061;
   border-color: #93E061;

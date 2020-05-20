@@ -7,6 +7,8 @@
   width: 100%;
   padding: 0px 50px;
   color:white;
+  position: absolute;
+  bottom: 0;
 }
 
 .footer-links {
@@ -54,5 +56,13 @@
 }
 
 .custom-container {
-  height: calc(100vh - 151px);
+  // height: calc(100vh - 151px);
+  position: relative;
+  min-height: 100vh;
+  padding-bottom: 90px;
+}
+
+body, html {
+  height: 100%;
+  position: relative;
 }

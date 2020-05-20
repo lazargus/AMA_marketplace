@@ -47,7 +47,7 @@ babolat = Racket.new({
   location: "Paris",
   user: User.find_by(first_name: "Benoit"),
 })
-babolat.photo.attach(io: File.open("app/assets/images/racket.jpg"), filename: "racket.jpg", content_type: "image/jpg")
+babolat.photo.attach(io: File.open("app/assets/images/rackets/babolat.jpg"), filename: "racket.jpg", content_type: "image/jpg")
 babolat.save!
 
 dunlop = Racket.new({
@@ -57,7 +57,7 @@ dunlop = Racket.new({
   location: "Marseille",
   user: User.find_by(first_name: "François"),
 })
-dunlop.photo.attach(io: File.open("app/assets/images/racket.jpg"), filename: "racket.jpg", content_type: "image/jpg")
+dunlop.photo.attach(io: File.open("app/assets/images/rackets/dunlop.jpg"), filename: "racket.jpg", content_type: "image/jpg")
 dunlop.save!
 
 
@@ -68,7 +68,7 @@ head = Racket.new({
   location: "Nice",
   user: User.find_by(first_name: "Alexandre"),
 })
-head.photo.attach(io: File.open("app/assets/images/racket.jpg"), filename: "racket.jpg", content_type: "image/jpg")
+head.photo.attach(io: File.open("app/assets/images/rackets/head.jpg"), filename: "racket.jpg", content_type: "image/jpg")
 head.save!
 
 prince = Racket.new({
@@ -78,7 +78,7 @@ prince = Racket.new({
   location: "Toulouse",
   user: User.find_by(first_name: "Augustin"),
 })
-prince.photo.attach(io: File.open("app/assets/images/racket.jpg"), filename: "racket.jpg", content_type: "image/jpg")
+prince.photo.attach(io: File.open("app/assets/images/rackets/prince.jpg"), filename: "racket.jpg", content_type: "image/jpg")
 prince.save!
 
 puts "Finished!"

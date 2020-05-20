@@ -1,12 +1,15 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <%= link_to (image_tag "logo.svg", alt: "tennis logo"), root_path, class: "navbar-brand" %>
-
+  <div class="left-side">
+    <%= link_to (image_tag "logo.svg", alt: "tennis logo"), root_path, class: "navbar-brand" %>
+    <h2>AMA</h2>
+  </div>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
 
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
+  <%= link_to 'Add a new racket', new_racket_path, class:'btn btn-primary', id:'add-button'  %>
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
         <li class="nav-item">

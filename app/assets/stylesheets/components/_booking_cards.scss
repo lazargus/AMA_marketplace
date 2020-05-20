@@ -39,3 +39,14 @@
   margin-top: 15px;
   background-color: rgba(255, 143, 106, 0.4);
 }
+
+.btn-success {
+  color: white;
+}
+
+.btn-danger {
+  opacity: 0.7;
+  &:hover {
+  opacity: 1;
+  }
+}

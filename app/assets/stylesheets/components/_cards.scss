@@ -34,6 +34,15 @@
     }
 }
 
+.card-racket h6 {
+  font-size: 14px;
+  font-weight: normal;
+  margin: 0;
+  padding: 10px 15px;
+  height: 2em;
+  color: #003A5D;
+}
+
 .card-racket p {
   font-size: 12px;
   opacity: .7;
@@ -50,7 +59,7 @@
   padding: 8px 10px;
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-end;
   position: relative;
   margin-top: 20px;
 }

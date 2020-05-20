@@ -2,9 +2,9 @@
   <div class="d-flex justify-content-between mt-5">
     <div class="racket-description-container">
       <div class="d-flex justify-content-between">
-        <div class="racket-show-image">
+        <div class="racket-show-image card-racket">
           <% if @racket.photo.attached? %>
-            <%= cl_image_tag @racket.photo.key, class: "racket-show-image" %>
+            <%= cl_image_tag @racket.photo.key %>
           <% end %>
         </div>
 

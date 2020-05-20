@@ -11,9 +11,11 @@
 }
 
 .card-booking img {
-  height: 100%;
+  height: 180px;
   width: 170px;
-  object-fit: cover;
+  object-fit: contain !important;
+  margin-left: 8px;
+  border-radius: 10%;
 }
 
 .card-booking .card-booking-infos {

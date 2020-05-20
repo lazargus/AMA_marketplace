@@ -14,18 +14,22 @@ User.destroy_all
 puts "Creating some Users"
 
 
-benoit = { first_name: "Benoit", last_name: "Bargès", email: "benoit@gmail.com", password: "tennis" }
+benoit = User.new({ first_name: "Benoit", last_name: "Bargès", email: "benoit@gmail.com", password: "tennis" })
+benoit.avatar.attach(io: File.open("app/assets/images/avatars/benoit.jpg"), filename: "avatar.jpg", content_type: "image/jpg")
+benoit.save
 
-augustin =  { first_name: "Augustin", last_name: "Lazarus", email: "augustin@gmail.com", password: "tennis" }
+augustin = User.new({ first_name: "Augustin", last_name: "Lazarus", email: "augustin@gmail.com", password: "tennis" })
+augustin.avatar.attach(io: File.open("app/assets/images/avatars/augustin.jpg"), filename: "avatar.jpg", content_type: "image/jpg")
+augustin.save
 
-francois =  { first_name: "François", last_name: "Desazars", email: "francois@gmail.com", password: "tennis" }
+francois = User.new({ first_name: "François", last_name: "Desazars", email: "francois@gmail.com", password: "tennis" })
+francois.avatar.attach(io: File.open("app/assets/images/avatars/francois.jpg"), filename: "avatar.jpg", content_type: "image/jpg")
+francois.save
 
-alexandre =  { first_name: "Alexandre", last_name: "Deniau", email: "alexandre@gmail.com", password: "tennis" }
+alexandre = User.new({ first_name: "Alexandre", last_name: "Deniau", email: "alexandre@gmail.com", password: "tennis" })
+alexandre.avatar.attach(io: File.open("app/assets/images/avatars/alex.jpg"), filename: "avatar.jpg", content_type: "image/jpg")
+alexandre.save
 
-[ benoit, augustin, francois, alexandre ].each do |attributes|
-  user = User.create!(attributes)
-  puts "Created #{user.first_name}"
-end
 puts "Finished!"
 
 

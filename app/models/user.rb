@@ -8,4 +8,5 @@ class User < ApplicationRecord
   has_many :bookings, dependent: :destroy
   has_many :rentals, through: :rackets, source: :bookings
   has_many :user_reviews, through: :bookings, dependent: :destroy
+  has_one_attached :avatar
 end

@@ -22,3 +22,20 @@
   flex-grow: 1;
   justify-content: space-between;
 }
+
+#b-confirmed {
+  border: solid 1px gray;
+  border-radius: 4px;
+  padding: 5px 10px;
+  margin-top: 15px;
+  background-color: rgba(174, 221, 97, 0.4);
+  width: 502.531px;
+}
+
+#wait-confirm {
+  border: solid 1px gray;
+  border-radius: 4px;
+  padding: 5px 10px;
+  margin-top: 15px;
+  background-color: rgba(255, 143, 106, 0.4);
+}

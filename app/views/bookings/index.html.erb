@@ -18,13 +18,12 @@
             <div>
               <h5><%= booking.racket.model %></h5>
               <h6>Owner : <%= booking.racket.user.first_name %> <%= booking.racket.user.last_name %></h6>
-              <p>from <%= booking.start_date %></p>
-              <p>to <%= booking.end_date %></p>
+              <p>From <em><%= booking.start_date %></em> to <em><%= booking.end_date %></em></p>
               <h6><%= price.to_i %>€</h6>
               <% if booking.confirmed? %>
-              <p>Booking confirmed !</p>
+                <p id="b-confirmed">Booking confirmed !</p>
               <% else %>
-              <p>Waiting for owner confirmation ...</p>
+                <p id="wait-confirm">Waiting for owner confirmation ...</p>
               <% end %>
             </div>
             <div>
@@ -54,13 +53,18 @@
             <div>
               <h5><%= rental.racket.model %></h5>
               <h6>Renter : <%= rental.user.first_name %> <%= rental.user.last_name %></h6>
-              <p>from <%= rental.start_date %></p>
-              <p>to <%= rental.end_date %></p>
+              <p>From <em><%= rental.start_date %></em> to <em><%= rental.end_date %></em></p>
               <h6><%= price.to_i %>€</h6>
               <% if rental.confirmed? %>
+<<<<<<< HEAD
               <p>Rental confirmed !</p>
               <% else %>
               <p>Waiting for your confirmation ...</p>
+=======
+                <p id="b-confirmed">Rental confirmed !</p>
+              <% else %>
+                <p id="wait-confirm">Waiting for your confirmation ...</p>
+>>>>>>> master
               <% end %>
             </div>
             <div>

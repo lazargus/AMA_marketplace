@@ -1,11 +1,10 @@
 <div class="banner"
   style="background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url(https://images.unsplash.com/photo-1581079708051-9784b310349f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1636&q=80);">
   <div class="container">
-    <h1><strong>AMA</strong></h1>
+    <h1 id="title"><strong>AMA</strong></h1>
     <h3>Enjoy playing anytime, anywhere!</h3>
     <p>Stop thinking of whether or not you should bring your tennis racket with you.
       Anywhere you go, AMA is here to provide you the best rackets nearby!</p>
-    <%= link_to 'Add a new racket', new_racket_path, class:'btn btn-primary'  %>
   </div>
 </div>
 
@@ -32,7 +31,7 @@
           <h2 class="card-racket-pricing"><%= racket.price %>€/day</h2>
         </div>
       </div>
-      <% end %>
+    <% end %>
     </div>
   </div>
 </div>

@@ -7,7 +7,6 @@
   width: 100%;
   padding: 0px 50px;
   color:white;
-  margin-top: 40px;
 }
 
 .footer-links {
@@ -54,4 +53,6 @@
   transition: 1s;
 }
 
-
+.custom-container {
+  height: calc(100vh - 151px);
+}

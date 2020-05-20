@@ -8,11 +8,6 @@
   <%= f.input :year %>
   <%= f.input :photo, as: :file %>
   <%= f.input :availability %>
-  <%= f.submit "Edit this racket", class: "btn btn-primary" %>
+  <%= f.submit "Edit racket", class: "btn btn-primary", id:'add-button' %>
   <% end %>
 </div>
-
-<hr>
-<%= link_to root_path do %>
-  <i class="fa fa-history"></i> Back to list of rackets
-<% end %>

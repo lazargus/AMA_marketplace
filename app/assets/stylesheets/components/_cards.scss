@@ -28,6 +28,10 @@
   padding: 10px 15px;
   height: 2em;
   color: #003A5D;
+  text-transform: uppercase;
+    & :hover {
+      text-decoration: none;
+    }
 }
 
 .card-racket p {

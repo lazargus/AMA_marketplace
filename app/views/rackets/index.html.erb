@@ -1,4 +1,5 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url(https://images.unsplash.com/photo-1581079708051-9784b310349f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1636&q=80);">
+<div class="banner"
+  style="background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url(https://images.unsplash.com/photo-1581079708051-9784b310349f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1636&q=80);">
   <div class="container">
     <h1><strong>AMA</strong></h1>
     <h3>Enjoy playing anytime, anywhere!</h3>
@@ -12,26 +13,26 @@
   <div class="row justify-content-center mb-2 mt-2">
     <div class="card-racket-container">
       <% @rackets.each do |racket| %>
-        <div class="card-racket">
-          <% if racket.photo.attached? %>
-            <%= cl_image_tag racket.photo.key, height: 300, width: 400, class:'cloudinary-image', alt: "alttext" %>
-            <div class="symbols">
-              <%= link_to edit_racket_path(racket.id), class: 'pull-right btn btn-default' do %>
-                <i class="far fa-edit"></i>
-              <% end %>
-              <%= link_to racket_path(racket), method: :delete, data: { confirm: "Are you sure?" } do %>
-                <i class="fa fa-trash "></i>
-              <% end %>
-            </div>
+      <div class="card-racket">
+        <% if racket.photo.attached? %>
+        <%= cl_image_tag racket.photo.key, height: 300, width: 400, class:'cloudinary-image', alt: "alttext" %>
+        <div class="symbols">
+          <%= link_to edit_racket_path(racket.id), class: 'pull-right btn btn-default' do %>
+          <i class="far fa-edit"></i>
+          <% end %>
+          <%= link_to racket_path(racket), method: :delete, data: { confirm: "Are you sure?" } do %>
+          <i class="fa fa-trash "></i>
+          <% end %>
+        </div>
         <% end %>
+
         <h2><%= link_to racket.model, racket_path(racket) %></h2>
         <div class="card-racket-infos">
           <p><i class="fas fa-map-marker-alt"></i> <%= racket.location %></p>
           <h2 class="card-racket-pricing"><%= racket.price %>€/day</h2>
         </div>
       </div>
-    <% end %>
+      <% end %>
+    </div>
   </div>
 </div>
-
-

@@ -1,4 +1,4 @@
-<div class="banner"
+<div class="banner mb-4"
   style="background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url(https://images.unsplash.com/photo-1581079708051-9784b310349f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1636&q=80);">
   <div class="container">
     <h1 id="title"><strong>AMA</strong></h1>
@@ -12,7 +12,7 @@
   <div class="row justify-content-center mb-2 mt-2">
     <div class="card-racket-container">
       <% @rackets.each do |racket| %>
-      <div class="card-racket">
+      <div class="card-racket m-2">
         <% if racket.photo.attached? %>
         <%= cl_image_tag racket.photo.key, height: 300, width: 400, class:'cloudinary-image', alt: "alttext" %>
         <div class="symbols">

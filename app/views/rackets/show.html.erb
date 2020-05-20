@@ -1,6 +1,6 @@
 <div class="container">
   <div class="d-flex justify-content-between mt-5">
-    <div class="container w-75">
+    <div class="racket-description-container">
       <div class="d-flex justify-content-between">
         <div class="racket-show-image">
           <% if @racket.photo.attached? %>
@@ -13,7 +13,7 @@
           <h5><%= @racket.model %></h5>
           <h5 class="price-tag"><%= @racket.price %>€/day</h5>
           <p id="description-tag" class="mb-0"><em>Description:</em></p>
-          <p><%= @racket.description %></p>
+          <p class="text-justify"><%= @racket.description %></p>
         </div>
       </div>
       <div class="container mt-5">

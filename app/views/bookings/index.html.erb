@@ -7,7 +7,7 @@
       <div class="col-sm-12">
         <div class="card-booking">
           <% number_of_days = booking.end_date - booking.start_date %>
-          <% price = booking.racket.price * number_of_days %>
+          <% price = (booking.racket.price * number_of_days) + booking.racket.price %>
           <div>
             <% if booking.racket.photo.attached? %>
             <%= cl_image_tag booking.racket.photo.key, alt: "alttext" %>
@@ -42,7 +42,7 @@
       <div class="col-sm-12">
         <div class="card-booking">
           <% number_of_days = rental.end_date - rental.start_date %>
-          <% price = rental.racket.price * number_of_days %>
+          <% price = (rental.racket.price * number_of_days) + rental.racket.price %>
           <div>
             <% if rental.racket.photo.attached? %>
             <%= cl_image_tag rental.racket.photo.key, alt: "alttext" %>

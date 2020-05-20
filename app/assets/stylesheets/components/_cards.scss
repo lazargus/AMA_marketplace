@@ -18,14 +18,16 @@
   height: 200px;
   width: 100%;
   object-fit: cover;
+  padding: 13px;
 }
 
 .card-racket h2 {
   font-size: 14px;
-  font-weight: bold;
+  font-weight: normal;
   margin: 0;
   padding: 10px 15px;
   height: 2em;
+  color: #003A5D;
 }
 
 .card-racket p {

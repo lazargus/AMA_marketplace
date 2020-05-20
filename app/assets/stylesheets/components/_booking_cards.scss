@@ -1,6 +1,6 @@
 .card-booking {
   overflow: hidden;
-  height: 190px;
+  height: 210px;
   width: 100%;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
@@ -16,23 +16,26 @@
   object-fit: cover;
 }
 
-.card-product h2 {
-  font-size: 16px;
-  font-weight: bold;
-  margin: 0;
-}
-
-.card-product p {
-  font-size: 12px;
-  line-height: 1.4;
-  opacity: .7;
-  margin-bottom: 0;
-  margin-top: 8px;
-}
-
 .card-booking .card-booking-infos {
   padding: 16px;
   display: flex;
   flex-grow: 1;
   justify-content: space-between;
+}
+
+#b-confirmed {
+  border: solid 1px gray;
+  border-radius: 4px;
+  padding: 5px 10px;
+  margin-top: 15px;
+  background-color: rgba(174, 221, 97, 0.4);
+  width: 502.531px;
+}
+
+#wait-confirm {
+  border: solid 1px gray;
+  border-radius: 4px;
+  padding: 5px 10px;
+  margin-top: 15px;
+  background-color: rgba(255, 143, 106, 0.4);
 }

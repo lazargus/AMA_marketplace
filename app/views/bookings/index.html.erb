@@ -17,7 +17,7 @@
             <div>
               <h5><%= booking.racket.model %></h5>
               <h6>Owner : <%= booking.racket.user.first_name %> <%= booking.racket.user.last_name %></h6>
-              <p>From <em><%= booking.start_date %></em> to <em><%= booking.end_date %></em></p>
+              <p><em><%= booking.start_date.strftime("Booked from %d/%m/%Y") %> to <%= booking.end_date.strftime("%d/%m/%Y") %></em></p>
               <h6><%= price.to_i %>€</h6>
               <% if booking.confirmed? %>
                 <p id="b-confirmed">Booking confirmed !</p>
@@ -52,7 +52,7 @@
             <div>
               <h5><%= rental.racket.model %></h5>
               <h6>Renter : <%= rental.user.first_name %> <%= rental.user.last_name %></h6>
-              <p>From <em><%= rental.start_date %></em> to <em><%= rental.end_date %></em></p>
+              <p><em><%= rental.start_date.strftime("Booked from %d/%m/%Y") %> to <%= rental.end_date.strftime("%d/%m/%Y") %></em></p>
               <h6><%= price.to_i %>€</h6>
               <% if rental.confirmed? %>
                 <p id="b-confirmed">Rental confirmed !</p>

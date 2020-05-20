@@ -56,15 +56,9 @@
               <p>From <em><%= rental.start_date %></em> to <em><%= rental.end_date %></em></p>
               <h6><%= price.to_i %>€</h6>
               <% if rental.confirmed? %>
-<<<<<<< HEAD
-              <p>Rental confirmed !</p>
-              <% else %>
-              <p>Waiting for your confirmation ...</p>
-=======
                 <p id="b-confirmed">Rental confirmed !</p>
               <% else %>
                 <p id="wait-confirm">Waiting for your confirmation ...</p>
->>>>>>> master
               <% end %>
             </div>
             <div>

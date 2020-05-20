@@ -1,13 +1,12 @@
 .footer {
-  background: #343A40;
+  background: #003A5D;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 65px;
+  height: 75px;
   width: 100%;
   padding: 0px 50px;
   color:white;
-  margin-top: 20px;
 }
 
 .footer-links {
@@ -16,7 +15,7 @@
 }
 
 .footer-links a {
-  color: white;
+  color: #F4F4F4;
   opacity: 0.3;
   text-decoration: none;
   font-size: 15px;
@@ -54,4 +53,6 @@
   transition: 1s;
 }
 
-
+.custom-container {
+  height: calc(100vh - 151px);
+}

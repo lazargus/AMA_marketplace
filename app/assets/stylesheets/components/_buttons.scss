@@ -1,0 +1,20 @@
+#add-button {
+  background-color: #F4F4F4;
+  border-color: rgba(63, 20, 20, 0.233);
+  border-radius: 10px;
+  opacity: 1;
+  font-weight: bold;
+  color: #003A5D;
+  margin-right: 7px;
+}
+
+#add-button:hover {
+  background-color: #F4F4F4;
+  border-color: #003A5D;
+  border-radius: 10px;
+  color: #003A5D;
+  opacity: 1;
+  font-weight: bold;
+  transition: 0.5s;
+}
+

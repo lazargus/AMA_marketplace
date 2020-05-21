@@ -23,6 +23,7 @@ gem 'jbuilder', '~> 2.7'
 # gem 'bcrypt', '~> 3.1.7'
 gem 'devise'
 gem 'geocoder'
+gem 'pundit'
 
 
 gem 'dotenv-rails', groups: [:development, :test]

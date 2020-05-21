@@ -51,7 +51,7 @@ class RacketsController < ApplicationController
     @racket = Racket.new(racket_params)
     authorize @racket
     @racket.user = current_user
-    if @racket.save!
+    if @racket.save
       redirect_to racket_path(@racket)
     else
       render :new

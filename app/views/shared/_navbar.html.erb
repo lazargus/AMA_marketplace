@@ -1,6 +1,6 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div class="left-side">
-    <%= link_to (image_tag "logo.svg", alt: "tennis logo"), root_path, class: "navbar-brand" %>
+    <%= link_to (image_tag "logo.svg", alt: "tennis logo"), root_path, class: "navbar-brand", data: { turbolinks: false } %>
     <%= link_to "AMA", root_path, class: "navbar-brand", id:"navbar-title" %>
   </div>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -28,7 +28,7 @@
           <% end %>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
             <%= link_to "Bookings", bookings_path, class: "dropdown-item", data: { turbolinks: false } %>
-            <%= link_to "My rackets", my_rackets_rackets_path, class: "dropdown-item" %>
+            <%= link_to "My rackets", my_rackets_rackets_path, class: "dropdown-item", data: { turbolinks: false } %>
             <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
           </div>
         </li>

@@ -42,7 +42,10 @@ initSweetalert('#booking-delete', {
   title: "Cancel booking?",
   text: "Once canceled, you will not be able to go back!",
   icon: "warning",
-  button: "Yes"
+  buttons: {
+    cancel: true,
+    confirm: true,
+  },
 }, (value) => {
   if (value) {
     const link = document.querySelector('#booking-delete-link');
@@ -54,7 +57,10 @@ initSweetalert('#rental-delete', {
   title: "Decline rental?",
   text: "Once declined, you will not be able to go back!",
   icon: "warning",
-  button: "Yes"
+  buttons: {
+    cancel: true,
+    confirm: true,
+  },
 }, (value) => {
   if (value) {
     const link = document.querySelector('#rental-delete-link');
@@ -65,7 +71,10 @@ initSweetalert('#rental-delete', {
 initSweetalert('#rental-accept', {
   title: "Accept rental?",
   icon: "success",
-  button: "Yes"
+    buttons: {
+    cancel: true,
+    confirm: true,
+  },
 }, (value) => {
   if (value) {
     const link = document.querySelector('#update-link');

@@ -25,7 +25,7 @@
         </div>
         <% end %>
 
-        <h2><%= link_to racket.model, racket_path(racket) %></h2>
+        <h2><%= link_to racket.model, racket_path(racket), data: { turbolinks: false } %></h2>
         <div class="card-racket-infos">
           <p><i class="fas fa-map-marker-alt"></i> <%= racket.location %></p>
           <h6 class="card-racket-pricing"><%= racket.price %>€/day</h6>

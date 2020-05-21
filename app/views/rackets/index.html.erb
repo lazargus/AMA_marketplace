@@ -16,14 +16,19 @@
         <% if racket.photo.attached? %>
         <%= cl_image_tag racket.photo.key, height: 300, width: 400, class:'cloudinary-image', alt: "alttext" %>
         <div class="symbols">
-          <%= link_to edit_racket_path(racket.id), class: 'pull-right btn btn-default' do %>
-          <i class="far fa-edit"></i>
+          <% if policy(racket).edit? %>
+            <%= link_to edit_racket_path(racket.id), class: 'pull-right btn btn-default' do %>
+              <i class="far fa-edit"></i>
+            <% end %>
           <% end %>
-          <%= link_to racket_path(racket), method: :delete, data: { confirm: "Are you sure?" } do %>
-          <i class="fa fa-trash "></i>
+          <% if policy(racket).destroy? %>
+            <%= link_to racket_path(racket), method: :delete, data: { confirm: "Are you sure?" } do %>
+              <i class="fa fa-trash "></i>
+            <% end %>
           <% end %>
         </div>
         <% end %>
+
 
         <h2><%= link_to racket.model, racket_path(racket) %></h2>
         <div class="card-racket-infos">

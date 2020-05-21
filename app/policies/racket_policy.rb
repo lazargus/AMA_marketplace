@@ -28,4 +28,8 @@ class RacketPolicy < ApplicationPolicy
   def destroy?
     record.user == user
   end
+
+  def my_rackets?
+    true
+  end
 end

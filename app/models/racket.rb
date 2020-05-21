@@ -7,4 +7,17 @@ class Racket < ApplicationRecord
   validates :description, :price, :location, :model, :photo, presence: true
   geocoded_by :location
   after_validation :geocode, if: :will_save_change_to_location?
+
+  include PgSearch::Model
+  pg_search_scope :search_by_location,
+    against: [ :location],
+    using: {
+      tsearch: { prefix: true } # <-- now `superman batm` will return something!
+    }
+
+ pg_search_scope :search_by_model,
+  against: [ :model],
+  using: {
+    tsearch: { prefix: true } # <-- now `superman batm` will return something!
+  }
 end

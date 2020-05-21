@@ -5,6 +5,11 @@
     <h3>Enjoy playing anytime, anywhere!</h3>
     <p>Stop thinking of whether or not you should bring your tennis racket with you.
       Anywhere you go, AMA is here to provide you the best rackets nearby!</p>
+    <%= simple_form_for(:search, url: root_path, method: :get, html: {class: 'form-inline'}) do |f| %>
+    <%= f.input :models, collection: Racket.all.pluck(:model), input_html: { class: "js-example-placeholder-multiple", name: "models[]", multiple: "multiple" }, label:false %>
+    <%= f.input :location, label:false, placeholder: "Location", input_html: {class: 'ml-4'}%>
+    <button type="submit" name="commit" value="" class="btn btn-primary ml-4" data-disable-with="Search">Search your racket  <i class="fas fa-table-tennis"></i></button>
+    <% end %>
   </div>
 </div>
 

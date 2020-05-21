@@ -26,7 +26,9 @@
               <% end %>
             </div>
             <div>
-              <%= link_to "Cancel", booking_path(booking), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger" %>
+              <% if policy(booking).destroy? %>
+                <%= link_to "Cancel", booking_path(booking), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger" %>
+              <% end %>
             </div>
           </div>
         </div>
@@ -61,11 +63,15 @@
               <% end %>
             </div>
             <div>
-              <%= link_to "Decline", booking_path(rental), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger" %>
+              <% if policy(rental).destroy? %>
+                <%= link_to "Cancel", booking_path(rental), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger" %>
+              <% end %>
             </div>
             <% if !rental.confirmed%>
             <div>
-              <%= link_to "Accept", booking_path(rental), method: :patch, class: "btn btn-success" %>
+              <% if policy(rental).update? %>
+                <%= link_to "Accept", booking_path(rental), method: :patch, data: { confirm: "Are you sure?" }, class: "btn btn-success" %>
+              <% end %>
             </div>
             <% end %>
           </div>

@@ -24,6 +24,8 @@ gem 'jbuilder', '~> 2.7'
 gem 'devise'
 gem 'geocoder'
 gem 'pg_search', '~> 2.3.0'
+gem 'pundit'
+
 
 
 gem 'dotenv-rails', groups: [:development, :test]

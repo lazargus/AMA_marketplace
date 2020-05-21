@@ -9,7 +9,11 @@
 
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
-  <%= link_to 'Add a new racket', new_racket_path, class:'btn btn-primary', id:'add-button'  %>
+
+    <% if policy(Racket).new? %>
+      <%= link_to "Add a new racket", new_racket_path, class:'btn btn-primary', id:'add-button' %>
+    <% end %>
+
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
         <li class="nav-item">

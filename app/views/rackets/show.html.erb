@@ -4,7 +4,7 @@
       <div class="d-flex justify-content-between">
         <div class="racket-show-image card-racket">
           <% if @racket.photo.attached? %>
-            <%= cl_image_tag @racket.photo.key %>
+            <%= cl_image_tag @racket.photo.key, class: 'zoom' %>
           <% end %>
         </div>
 

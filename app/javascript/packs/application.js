@@ -29,6 +29,8 @@ import "../plugins/flatpickr"
 import { initSweetalert } from '../plugins/init_sweetalert';
 import { initSelect2 } from '../components/init_select2';
 import "../plugins/scrollreveal"
+import { initStarRating } from '../plugins/init_star_rating';
+
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
@@ -37,6 +39,8 @@ document.addEventListener('turbolinks:load', () => {
   initMapbox();
   initSelect2();
 });
+
+initStarRating();
 
 initSweetalert('#booking-delete', {
   title: "Cancel booking?",
@@ -81,15 +85,5 @@ initSweetalert('#rental-accept', {
     link.click();
   }
 });
-
-
-
-
-
-
-
-
-
-
 
 

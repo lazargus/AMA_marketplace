@@ -27,17 +27,18 @@
             <% end %>
           </div>
           <div>
+            <% if policy(booking).destroy? %>
             <%= link_to "Cancel", booking_path(booking), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger" %>
+            <% end %>
           </div>
-
           <div>
             <%= link_to "Add a racket review",  new_racket_review_path(booking.racket), class: "btn btn-primary" %>
           </div>
-
         </div>
       </div>
     </div>
   </div>
+
   <% end %>
 
   <div class='text-center m-4'>
@@ -54,6 +55,7 @@
           <%= cl_image_tag rental.racket.photo.key, alt: "alttext" %>
           <% end %>
         </div>
+
         <div class="card-booking-infos">
           <div>
             <h5><%= rental.racket.model %></h5>
@@ -68,11 +70,15 @@
             <% end %>
           </div>
           <div>
-            <%= link_to "Decline", booking_path(rental), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger" %>
+            <% if policy(rental).destroy? %>
+            <%= link_to "Cancel", booking_path(rental), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger" %>
+            <% end %>
           </div>
           <% if !rental.confirmed%>
           <div>
-            <%= link_to "Accept", booking_path(rental), method: :patch, class: "btn btn-success" %>
+            <% if policy(rental).update? %>
+            <%= link_to "Accept", booking_path(rental), method: :patch, data: { confirm: "Are you sure?" }, class: "btn btn-success" %>
+            <% end %>
           </div>
           <% end %>
         </div>

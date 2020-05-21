@@ -1,14 +1,15 @@
 class BookingsController < ApplicationController
 
   def index
-    @bookings = current_user.bookings
-    @rentals = current_user.rentals
+    @bookings = policy_scope(current_user.bookings)
+    @rentals = policy_scope(current_user.rentals)
   end
 
   def create
     @racket = Racket.find(params[:racket_id])
     @user = current_user
     @booking = Booking.new(booking_params)
+    authorize @booking
     @booking.racket = @racket
     @booking.user = @user
     if @booking.save
@@ -20,12 +21,15 @@ class BookingsController < ApplicationController
 
   def destroy
     @booking = Booking.find(params[:id])
+    authorize @booking
     @booking.destroy
     redirect_to bookings_path, notice: 'Booking was successfully cancelled.'
   end
 
   def update
-    Booking.find(params[:id]).update(confirmed: true)
+    @booking = Booking.find(params[:id])
+    authorize @booking
+    @booking.update(confirmed: true)
     redirect_to bookings_path, notice: 'Booking was successfully updated.'
   end
 

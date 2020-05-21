@@ -8,6 +8,9 @@ Rails.application.routes.draw do
   resources :rackets, except: :index do
     resources :bookings, only: [:new, :create]
     resources :reviews, only: [:new, :create]
+    collection do
+      get :my_rackets
+    end
   end
 
   resources :bookings, only: [:index, :destroy, :update]

@@ -3,7 +3,12 @@ class RacketsController < ApplicationController
   before_action :set_racket, only: [ :show, :edit, :update, :destroy ]
 
   def index
-    @rackets = Racket.geocoded
+    @rackets = policy_scope(Racket).geocoded.order(created_at: :desc)
+  end
+
+  def my_rackets
+    @rackets = current_user.rackets
+    authorize @rackets
   end
 
   def show
@@ -21,10 +26,12 @@ class RacketsController < ApplicationController
 
   def new
     @racket = Racket.new
+    authorize @racket
   end
 
   def create
     @racket = Racket.new(racket_params)
+    authorize @racket
     @racket.user = current_user
     if @racket.save!
       redirect_to racket_path(@racket)
@@ -34,9 +41,11 @@ class RacketsController < ApplicationController
   end
 
   def edit
+    authorize @racket
   end
 
   def update
+    authorize @racket
     if @racket.update(racket_params)
       redirect_to racket_path(@racket), notice: 'Racket was successfully updated.'
     else
@@ -45,6 +54,7 @@ class RacketsController < ApplicationController
   end
 
   def destroy
+    authorize @racket
     @racket.destroy
     redirect_to root_path, notice: 'Racket was successfully destroyed.'
   end
@@ -53,6 +63,7 @@ class RacketsController < ApplicationController
 
   def set_racket
     @racket = Racket.find(params[:id])
+    authorize @racket
   end
 
   def racket_params

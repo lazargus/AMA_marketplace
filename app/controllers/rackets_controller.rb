@@ -11,7 +11,7 @@ class RacketsController < ApplicationController
         @rackets = @rackets.search_by_location(params[:search][:location])
       end
 
-      if params[:models]
+      if params[:models].last.present?
         results = []
 
         params[:models].reject(&:empty?).each do |model|

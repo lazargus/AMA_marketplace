@@ -1,6 +1,6 @@
 class Racket < ApplicationRecord
   has_many :bookings, dependent: :destroy
-  has_many :racket_reviews, through: :bookings
+  has_many :reviews
   belongs_to :user
   has_one_attached :photo
 

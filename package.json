@@ -12,6 +12,7 @@
     "jquery-bar-rating": "^1.2.2",
     "mapbox-gl": "^1.10.1",
     "popper.js": "^1.16.1",
+    "scrollreveal": "^4.0.6",
     "select2": "^4.0.13",
     "sweetalert": "^2.1.2",
     "turbolinks": "^5.2.0"

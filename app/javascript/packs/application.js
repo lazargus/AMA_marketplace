@@ -25,8 +25,10 @@ require("channels")
 // External imports
 import "bootstrap";
 import { initMapbox } from '../plugins/init_mapbox';
+import "../plugins/flatpickr"
+import { initSweetalert } from '../plugins/init_sweetalert';
 import { initSelect2 } from '../components/init_select2';
-import  "../plugins/flatpickr"
+import { initStarRating } from '../plugins/init_star_rating';
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
@@ -36,6 +38,50 @@ document.addEventListener('turbolinks:load', () => {
   initSelect2();
 });
 
-import { initStarRating } from '../plugins/init_star_rating';
-
 initStarRating();
+
+initSweetalert('#booking-delete', {
+  title: "Cancel booking?",
+  text: "Once canceled, you will not be able to go back!",
+  icon: "warning",
+  buttons: {
+    cancel: true,
+    confirm: true,
+  },
+}, (value) => {
+  if (value) {
+    const link = document.querySelector('#booking-delete-link');
+    link.click();
+  }
+});
+
+initSweetalert('#rental-delete', {
+  title: "Decline rental?",
+  text: "Once declined, you will not be able to go back!",
+  icon: "warning",
+  buttons: {
+    cancel: true,
+    confirm: true,
+  },
+}, (value) => {
+  if (value) {
+    const link = document.querySelector('#rental-delete-link');
+    link.click();
+  }
+});
+
+initSweetalert('#rental-accept', {
+  title: "Accept rental?",
+  icon: "success",
+    buttons: {
+    cancel: true,
+    confirm: true,
+  },
+}, (value) => {
+  if (value) {
+    const link = document.querySelector('#update-link');
+    link.click();
+  }
+});
+
+

@@ -26,7 +26,8 @@
               <% end %>
             </div>
             <div>
-              <%= link_to "Cancel", booking_path(booking), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger" %>
+              <button id="sweet-alert-delete" class="btn btn-danger">Cancel</button>
+              <%= link_to "", booking_path(booking), method: :delete, id: "delete-link", class: "hidden" %>
             </div>
           </div>
         </div>

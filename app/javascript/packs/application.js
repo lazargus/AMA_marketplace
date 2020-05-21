@@ -26,6 +26,7 @@ require("channels")
 import "bootstrap";
 import { initMapbox } from '../plugins/init_mapbox';
 import "../plugins/flatpickr"
+import { initSweetalert } from '../plugins/init_sweetalert';
 
 
 // Internal imports, e.g:
@@ -34,3 +35,28 @@ import "../plugins/flatpickr"
 document.addEventListener('turbolinks:load', () => {
   initMapbox();
 });
+
+
+
+initSweetalert('#sweet-alert-delete', {
+  title: "Cancel booking?",
+  text: "Once canceled, you will not be able to go back!",
+  icon: "error"
+}, (value) => {
+  if (value) {
+    const link = document.querySelector('#delete-link');
+    link.click();
+  }
+});
+
+
+
+
+
+
+
+
+
+
+
+

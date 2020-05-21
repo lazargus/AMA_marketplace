@@ -4,6 +4,24 @@ class RacketsController < ApplicationController
 
   def index
     @rackets = Racket.geocoded
+
+    if params[:search]
+
+      if params[:search][:location].present?
+        @rackets = @rackets.search_by_location(params[:search][:location])
+      end
+
+      if params[:models]
+        results = []
+
+        params[:models].reject(&:empty?).each do |model|
+          results << @rackets.search_by_model(model)
+        end
+
+        @rackets = results.flatten
+      end
+
+    end
   end
 
   def show

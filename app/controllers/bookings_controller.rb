@@ -21,12 +21,12 @@ class BookingsController < ApplicationController
   def destroy
     @booking = Booking.find(params[:id])
     @booking.destroy
-    redirect_to bookings_path
+    redirect_to bookings_path, notice: 'Booking was successfully cancelled.'
   end
 
   def update
     Booking.find(params[:id]).update(confirmed: true)
-    redirect_to bookings_path
+    redirect_to bookings_path, notice: 'Booking was successfully updated.'
   end
 
   private

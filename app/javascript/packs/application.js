@@ -25,8 +25,10 @@ require("channels")
 // External imports
 import "bootstrap";
 import { initMapbox } from '../plugins/init_mapbox';
+<<<<<<< HEAD
 import "../plugins/flatpickr"
 import { initSweetalert } from '../plugins/init_sweetalert';
+import { initSelect2 } from '../components/init_select2';
 
 
 // Internal imports, e.g:
@@ -34,6 +36,7 @@ import { initSweetalert } from '../plugins/init_sweetalert';
 
 document.addEventListener('turbolinks:load', () => {
   initMapbox();
+  initSelect2();
 });
 
 initSweetalert('#booking-delete', {

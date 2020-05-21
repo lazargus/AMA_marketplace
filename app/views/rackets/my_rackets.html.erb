@@ -1,15 +1,7 @@
-<div class="banner mb-4"
-  style="background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url(https://images.unsplash.com/photo-1581079708051-9784b310349f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1636&q=80);">
+<div class="banner mb-4 text-center" id="my-rackets-banner"
+  style="background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url(<%= asset_path 'my_rackets.jpeg' %>);">
   <div class="container">
-    <h1 id="title"><strong>AMA</strong></h1>
-    <h3>Enjoy playing anytime, anywhere!</h3>
-    <p>Stop thinking of whether or not you should bring your tennis racket with you.
-      Anywhere you go, AMA is here to provide you the best rackets nearby!</p>
-    <%= simple_form_for(:search, url: root_path, method: :get, html: {class: 'form-inline'}) do |f| %>
-    <%= f.input :models, collection: Racket.all.pluck(:model), input_html: { class: "js-example-placeholder-multiple", name: "models[]", multiple: "multiple" }, label:false %>
-    <%= f.input :location, label:false, placeholder: "Location", input_html: {class: 'ml-4'}%>
-    <button type="submit" name="commit" value="" class="btn btn-primary ml-4" data-disable-with="Search">Search your racket  <i class="fas fa-table-tennis"></i></button>
-    <% end %>
+    <h1 id="title"><strong>My rackets (<%= @rackets.count %>)</strong></h1>
   </div>
 </div>
 

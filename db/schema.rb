@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_20_084655) do
+ActiveRecord::Schema.define(version: 2020_05_21_121611) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -48,15 +48,6 @@ ActiveRecord::Schema.define(version: 2020_05_20_084655) do
     t.index ["user_id"], name: "index_bookings_on_user_id"
   end
 
-  create_table "racket_reviews", force: :cascade do |t|
-    t.text "content"
-    t.integer "rating"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.bigint "booking_id"
-    t.index ["booking_id"], name: "index_racket_reviews_on_booking_id"
-  end
-
   create_table "rackets", force: :cascade do |t|
     t.text "description"
     t.string "model"
@@ -72,13 +63,15 @@ ActiveRecord::Schema.define(version: 2020_05_20_084655) do
     t.index ["user_id"], name: "index_rackets_on_user_id"
   end
 
-  create_table "user_reviews", force: :cascade do |t|
-    t.text "content"
+  create_table "reviews", force: :cascade do |t|
     t.integer "rating"
+    t.text "content"
+    t.bigint "user_id", null: false
+    t.bigint "racket_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.bigint "booking_id"
-    t.index ["booking_id"], name: "index_user_reviews_on_booking_id"
+    t.index ["racket_id"], name: "index_reviews_on_racket_id"
+    t.index ["user_id"], name: "index_reviews_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -98,7 +91,7 @@ ActiveRecord::Schema.define(version: 2020_05_20_084655) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "bookings", "rackets"
   add_foreign_key "bookings", "users"
-  add_foreign_key "racket_reviews", "bookings"
   add_foreign_key "rackets", "users"
-  add_foreign_key "user_reviews", "bookings"
+  add_foreign_key "reviews", "rackets"
+  add_foreign_key "reviews", "users"
 end

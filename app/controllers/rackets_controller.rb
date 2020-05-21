@@ -6,6 +6,11 @@ class RacketsController < ApplicationController
     @rackets = policy_scope(Racket).geocoded.order(created_at: :desc)
   end
 
+  def my_rackets
+    @rackets = current_user.rackets
+    authorize @rackets
+  end
+
   def show
     @booking = Booking.new
 

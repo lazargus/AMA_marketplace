@@ -36,15 +36,37 @@ document.addEventListener('turbolinks:load', () => {
   initMapbox();
 });
 
-
-
-initSweetalert('#sweet-alert-delete', {
+initSweetalert('#booking-delete', {
   title: "Cancel booking?",
   text: "Once canceled, you will not be able to go back!",
-  icon: "error"
+  icon: "warning",
+  button: "Yes"
 }, (value) => {
   if (value) {
-    const link = document.querySelector('#delete-link');
+    const link = document.querySelector('#booking-delete-link');
+    link.click();
+  }
+});
+
+initSweetalert('#rental-delete', {
+  title: "Decline rental?",
+  text: "Once declined, you will not be able to go back!",
+  icon: "warning",
+  button: "Yes"
+}, (value) => {
+  if (value) {
+    const link = document.querySelector('#rental-delete-link');
+    link.click();
+  }
+});
+
+initSweetalert('#rental-accept', {
+  title: "Accept rental?",
+  icon: "success",
+  button: "Yes"
+}, (value) => {
+  if (value) {
+    const link = document.querySelector('#update-link');
     link.click();
   }
 });

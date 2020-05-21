@@ -26,8 +26,8 @@
               <% end %>
             </div>
             <div>
-              <button id="sweet-alert-delete" class="btn btn-danger">Cancel</button>
-              <%= link_to "", booking_path(booking), method: :delete, id: "delete-link", class: "hidden" %>
+              <button id="booking-delete" class="btn btn-danger">Cancel</button>
+              <%= link_to "", booking_path(booking), method: :delete, id: "booking-delete-link", class: "hidden" %>
             </div>
           </div>
         </div>
@@ -62,11 +62,13 @@
               <% end %>
             </div>
             <div>
-              <%= link_to "Decline", booking_path(rental), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger" %>
+              <button id="rental-delete" class="btn btn-danger">Decline</button>
+              <%= link_to "", booking_path(rental), method: :delete, id: "rental-delete-link", class: "hidden" %>
             </div>
             <% if !rental.confirmed%>
             <div>
-              <%= link_to "Accept", booking_path(rental), method: :patch, class: "btn btn-success" %>
+              <button id="rental-accept" class="btn btn-success">Accept</button>
+              <%= link_to "", booking_path(rental), method: :patch, id: "update-link", class: "hidden" %>
             </div>
             <% end %>
           </div>

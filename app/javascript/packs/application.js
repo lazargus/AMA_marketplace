@@ -35,3 +35,7 @@ document.addEventListener('turbolinks:load', () => {
   initMapbox();
   initSelect2();
 });
+
+import { initStarRating } from '../plugins/init_star_rating';
+
+initStarRating();

@@ -1,10 +1,11 @@
-<h1>Reviews#new</h1>
-<p>Find me in app/views/reviews/new.html.erb</p>
-
-
-<h3>Add a racket review</h3>
-<%= simple_form_for [@racket, @review] do |f| %>
-  <%= f.input :rating, collection: 0..5 %>
-  <%= f.input :content %>
-  <%= f.submit class: "btn btn-primary"%>
-<% end %>
+<div class="container">
+    <div class="text-center m-4">
+      <h1>Add a review to the racket</h1>
+    </div>
+      <%= simple_form_for [@racket, @review] do |f| %>
+        <%= f.input :content, label: "What did you think about the racket?" %>
+        <%= f.input :rating, collection: (1..5).to_a, label: "Rate your experience" %>
+        <%= f.submit "Send your review" %>
+      <% end %>
+  </div>
+</div>

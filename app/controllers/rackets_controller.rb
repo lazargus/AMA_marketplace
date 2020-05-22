@@ -32,6 +32,8 @@ class RacketsController < ApplicationController
   def show
     @booking = Booking.new
 
+
+
     # @markers = @rackets.map do |racket|
     #   {
     #     lat: racket.latitude,

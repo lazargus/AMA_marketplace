@@ -2,3 +2,25 @@
   background: none;
   border: none;
 }
+
+.symbols .fa-edit {
+  background: none;
+  border: none;
+}
+
+.symbols .fa-edit:hover {
+  color: #035AC1;
+  cursor: pointer;
+  opacity: 1;
+}
+
+.symbols .fa-trash {
+  color: black;
+  cursor: pointer;
+  opacity: 1;
+    &:hover {
+    color: #035AC1;
+    cursor: pointer;
+    opacity: 1;
+  }
+}

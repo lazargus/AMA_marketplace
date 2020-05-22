@@ -1,5 +1,5 @@
 <div class="banner mb-4 text-center" id="my-rackets-banner"
-  style="background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url(<%= image_path 'my_rackets.jpeg' %>);">
+  style="background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url(<%= image_path 'my_rackets.jpg' %>);">
   <div class="container">
     <h1 id="title"><strong>My rackets (<%= @rackets.count %>)</strong></h1>
   </div>
@@ -19,9 +19,8 @@
             <% end %>
           <% end %>
           <% if policy(racket).destroy? %>
-            <%= link_to racket_path(racket), method: :delete, data: { confirm: "Are you sure?" } do %>
-              <i class="fa fa-trash "></i>
-            <% end %>
+            <button id="racket-delete"><i class="fa fa-trash "></i></button>
+            <%= link_to "", racket_path(racket), method: :delete, id: "update-link", class: "hidden" %>
           <% end %>
         </div>
         <% end %>

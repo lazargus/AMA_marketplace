@@ -28,7 +28,9 @@ import { initMapbox } from '../plugins/init_mapbox';
 import "../plugins/flatpickr"
 import { initSweetalert } from '../plugins/init_sweetalert';
 import { initSelect2 } from '../components/init_select2';
+import "../plugins/scrollreveal"
 import { initStarRating } from '../plugins/init_star_rating';
+
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
@@ -73,6 +75,21 @@ initSweetalert('#rental-delete', {
 initSweetalert('#rental-accept', {
   title: "Accept rental?",
   icon: "success",
+    buttons: {
+    cancel: true,
+    confirm: true,
+  },
+}, (value) => {
+  if (value) {
+    const link = document.querySelector('#update-link');
+    link.click();
+  }
+});
+
+initSweetalert('#racket-delete', {
+  title: "Delete Racket?",
+  text: "Once deleted, you will not be able to go back!",
+  icon: "warning",
     buttons: {
     cancel: true,
     confirm: true,

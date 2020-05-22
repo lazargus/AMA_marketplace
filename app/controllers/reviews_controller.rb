@@ -12,7 +12,7 @@ class ReviewsController < ApplicationController
     @review.racket = Racket.find(params[:racket_id])
     @review.user = current_user
     if @review.save!
-      redirect_to bookings_path, notice: 'Review was successfully added. Thank you!'
+      redirect_to racket_path(@racket), notice: 'Review was successfully added. Thank you!'
     else
       flash[:alert] = "Something went wrong."
       render :new

@@ -31,7 +31,8 @@ class RacketsController < ApplicationController
 
   def show
     @booking = Booking.new
-    raise
+
+
 
     # @markers = @rackets.map do |racket|
     #   {

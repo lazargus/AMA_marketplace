@@ -4,7 +4,7 @@
       <div class="d-flex justify-content-between">
         <div class="racket-show-image card-racket">
           <% if @racket.photo.attached? %>
-            <%= cl_image_tag @racket.photo.key %>
+          <%= cl_image_tag @racket.photo.key %>
           <% end %>
         </div>
 
@@ -15,10 +15,16 @@
           <p id="description-tag" class="mb-0"><em>Description:</em></p>
           <p class="text-justify"><%= @racket.description %></p>
 
-          <h5><%= @racket.reviews.each do |racket| %>
-          <%= @racket.reviews %>
-          <% end %>
-          
+          <h5><% @racket.reviews.each do |review| %>
+            <% if review.content != "" %>
+            <div>
+              <%= review.rating %>
+              <%= review.content %>
+            </div>
+            <% end %>
+            <% end %>
+
+
           </h5>
         </div>
       </div>
@@ -26,10 +32,8 @@
         <h3>Location:</h3>
         <hr>
         <div class="row mt-4">
-          <div id="map"
-               class="container-map"
-               data-markers="<%= @marker.to_json %>"
-               data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+          <div id="map" class="container-map" data-markers="<%= @marker.to_json %>"
+            data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
           </div>
         </div>
       </div>
@@ -42,5 +46,3 @@
   </div>
   <br>
 </div>
-
-

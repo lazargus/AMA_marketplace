@@ -9,7 +9,8 @@ class ReviewsController < ApplicationController
   def create
     @review = Review.new(review_params)
     authorize @review
-    @review.racket = Racket.find(params[:racket_id])
+    @racket = Racket.find(params[:racket_id])
+    @review.racket = @racket
     @review.user = current_user
     if @review.save!
       redirect_to racket_path(@racket), notice: 'Review was successfully added. Thank you!'

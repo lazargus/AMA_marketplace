@@ -28,12 +28,12 @@
             <div class="my-bookings-btn">
               <div>
                 <% if Date.today > booking.end_date %>
-                  <%= link_to "Add a review",  new_racket_review_path(booking.racket), class: "btn btn-primary", id: "add-button", data: { turbolinks: false }, remote: true %>
+                  <%= link_to "Add a review",  new_racket_review_path(booking.racket), class: "btn btn-primary", id: "add-button", data: { turbolinks: false }%>
                 <% end %>
               </div>
               <% if policy(booking).destroy? %>
                 <button id="booking-delete" class="btn btn-danger">Cancel</button>
-                <%= link_to "", booking_path(booking), method: :delete, id: "booking-delete-link", class: "hidden", remote: true %>
+                <%= link_to "", booking_path(booking), method: :delete, id: "booking-delete-link", class: "hidden" %>
               <% end %>
             </div>
           </div>
@@ -73,7 +73,7 @@
                 <div>
                   <% if policy(rental).update? %>
                     <button id="rental-accept" class="btn btn-success">Accept</button>
-                    <%= link_to "", booking_path(rental), method: :patch, id: "update-link", class: "hidden", remote: true %>
+                    <%= link_to "", booking_path(rental), method: :patch, id: "update-link", class: "hidden" %>
                   <% end %>
                 </div>
               <% end %>

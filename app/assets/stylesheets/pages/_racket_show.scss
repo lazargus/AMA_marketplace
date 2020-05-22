@@ -33,13 +33,24 @@
 }
 
 .zoom {
-  padding: 50px;
-  transition: transform .2s; /* Animation */
-  width: 200px;
-  height: 200px;
-  margin: 0 auto;
+  -webkit-transition: all 0.35s ease-in-out;
+  -moz-transition: all 0.35s ease-in-out;
+  transition: all 0.35s ease-in-out;
+  cursor: -webkit-zoom-in;
+  cursor: -moz-zoom-in;
+  cursor: zoom-in;
 }
 
-.zoom:hover {
-  transform: scale(1.5); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+.zoom:hover,
+.zoom:active,
+.zoom:focus {
+/**adjust scale to desired size,
+add browser prefixes**/
+  -ms-transform: scale(1.8);
+  -moz-transform: scale(1.8);
+  -webkit-transform: scale(1.8);
+  -o-transform: scale(1.8);
+  transform: scale(1.8);
+  position:relative;
+  z-index:100;
 }

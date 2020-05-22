@@ -22,7 +22,7 @@
           <p id="description-tag" class="mb-0"><em>Description:</em></p>
           <p class="text-justify"><%= @racket.description %></p>
 
-          <h5>Latest reviews <a href="#example">(See more reviews)</a></h5>
+          <h5>Latest reviews <a href="#example" data-turbolinks="false">(See more reviews)</a></h5>
           <% if @racket.reviews.empty? %>
             <p>There is no review on this racket yet.</p>
           <% else %>
@@ -56,7 +56,7 @@
         </div>
       </div>
       <div class="mt-4">
-        <h5><a id="example"></a>All reviews</h5>
+        <h5 id="example">All reviews</h5>
         <hr>
        <ul class="list-group">
           <% @racket.reviews.reverse.each do |review| %>

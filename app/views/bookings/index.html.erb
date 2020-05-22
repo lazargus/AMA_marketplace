@@ -25,14 +25,14 @@
                 <p id="wait-confirm">Waiting for owner confirmation ...</p>
               <% end %>
             </div>
-            <div>
+            <div class="my-bookings-btn">
+              <div>
+                <%= link_to "Add a review",  new_racket_review_path(booking.racket), class: "btn btn-primary", id: "add-button", data: { turbolinks: false } %>
+              </div>
               <% if policy(booking).destroy? %>
                 <button id="booking-delete" class="btn btn-danger">Cancel</button>
                 <%= link_to "", booking_path(booking), method: :delete, id: "booking-delete-link", class: "hidden" %>
               <% end %>
-            </div>
-            <div>
-              <%= link_to "Add a racket review",  new_racket_review_path(booking.racket), class: "btn btn-primary", id: "add-button", data: { turbolinks: false } %>
             </div>
           </div>
         </div>

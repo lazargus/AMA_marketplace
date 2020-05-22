@@ -35,7 +35,7 @@
 }
 
 .card-racket h6 {
-  font-size: 14px;
+  font-size: 15px;
   font-weight: normal;
   margin: 0;
   padding: 10px 15px;
@@ -44,9 +44,10 @@
 }
 
 .card-racket p {
-  font-size: 12px;
+  font-size: 14px;
   opacity: .7;
   margin: 0;
+  margin-left: 6px;
 }
 
 .card-racket .fa {
@@ -56,7 +57,7 @@
 }
 
 .card-racket .card-racket-infos {
-  padding: 8px 10px;
+  padding: 3px 10px;
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
@@ -66,6 +67,7 @@
 
 .cloudinary-image {
   object-fit: contain !important;
+  padding: 8px;
 }
 
 .symbols {

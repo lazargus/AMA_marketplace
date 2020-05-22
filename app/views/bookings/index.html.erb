@@ -69,14 +69,14 @@
             <div>
               <% if policy(rental).destroy? %>
                 <button id="rental-delete" class="btn btn-danger">Decline</button>
-                <%= link_to "", booking_path(rental), method: :delete, id: "rental-delete-link", class: "hidden" %>
+                <%= link_to "", booking_path(rental), method: :delete, id: "rental-delete-link", class: "hidden", data: { turbolinks: false } %>
               <% end %>
             </div>
             <% if !rental.confirmed%>
               <div>
                 <% if policy(rental).update? %>
                   <button id="rental-accept" class="btn btn-success">Accept</button>
-                  <%= link_to "", booking_path(rental), method: :patch, id: "update-link", class: "hidden" %>
+                  <%= link_to "", booking_path(rental), method: :patch, id: "update-link", class: "hidden", data: { turbolinks: false } %>
                 <% end %>
               </div>
             <% end %>

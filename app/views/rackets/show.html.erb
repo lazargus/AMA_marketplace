@@ -12,10 +12,12 @@
         <div id="raquet-info">
           <h5><%= @racket.model %></h5>
           <h5 class="price-tag"><%= @racket.price %>€/day</h5>
+          <h5>Average rating
+            <%= @racket.reviews.average(:rating)%> / 5</h5>
           <p id="description-tag" class="mb-0"><em>Description:</em></p>
           <p class="text-justify"><%= @racket.description %></p>
 
-          <h5>Latest reviews on this racket: (see more below)</h5>
+          <h5>Latest reviews:</h5>
           <% if @racket.reviews.empty? %>
             <p>There is no review on this racket yet.</p>
           <% else %>
@@ -23,6 +25,7 @@
               <% @racket.reviews.each do |review| %>
               <% if review.content != "" %>
                 <li class="list-group-item d-flex justify-content-between align-items-center">
+                  <%= review.content %>
                   <span class="badge badge-primary badge-pill">
                     <% counter = 0 %>
                     <% 5.times do %>
@@ -30,13 +33,11 @@
                       <% counter += 1 %>
                     <% end %>
                   </span>
-                  <%= review.content %>
                 </li>
               <% end %>
             </ul>
           <% end %>
           <% end %>
-
 
         </div>
       </div>

@@ -11,9 +11,10 @@
 
         <div id="raquet-info">
           <h5><%= @racket.model %></h5>
+          <div class="d-flex justify-content-between align-items-center">
           <h5 class="price-tag"><%= @racket.price %>€/day</h5>
-          <h5>Average rating
-            <%= @racket.reviews.average(:rating)%> / 5</h5>
+          <h5 class="price-tag">Rating: <%= @racket.reviews.average(:rating).round(1) %> / 5</h5>
+        </div>
           <p id="description-tag" class="mb-0"><em>Description:</em></p>
           <p class="text-justify"><%= @racket.description %></p>
 

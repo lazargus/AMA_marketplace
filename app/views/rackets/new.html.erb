@@ -3,10 +3,10 @@
     <h1>Add a new racket</h1>
   </div>
   <%= simple_form_for(@racket) do |f| %>
-  <%= f.input :description %>
+  <%= f.input :model %>
   <%= f.input :price %>
   <%= f.input :location, label: 'City' %>
-  <%= f.input :model %>
+  <%= f.input :description %>
   <%= f.input :year %>
   <%= f.input :photo, as: :file %>
   <%= f.input :availability %>

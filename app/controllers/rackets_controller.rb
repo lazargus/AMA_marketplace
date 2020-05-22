@@ -76,7 +76,7 @@ class RacketsController < ApplicationController
   def destroy
     authorize @racket
     @racket.destroy
-    redirect_to root_path, notice: 'Racket was successfully destroyed.'
+    redirect_to my_rackets_rackets_path, notice: 'Racket was successfully destroyed.'
   end
 
   private

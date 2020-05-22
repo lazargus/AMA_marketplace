@@ -28,6 +28,7 @@
 
 .price-tag {
   color: #E4CE37;
+  justify-content: space-between;
 }
 
 #description-tag {
@@ -59,4 +60,5 @@ add browser prefixes**/
   transform: scale(1.8);
   position:relative;
   z-index:100;
+  background-color: white;
 }

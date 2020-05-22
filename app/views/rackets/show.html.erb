@@ -13,12 +13,16 @@
           <h5><%= @racket.model %></h5>
           <div class="d-flex justify-content-between align-items-center">
           <h5 class="price-tag"><%= @racket.price %>€/day</h5>
-          <h5 class="price-tag">Rating: <%= @racket.reviews.average(:rating).round(1) %> / 5</h5>
+          <% if @racket.reviews.empty? %>
+            <h5 class="price-tag"></h5>
+          <% else %>
+            <h5 class="price-tag">Rating: <%= @racket.reviews.average(:rating).round(1) %> / 5</h5>
+          <% end %>
         </div>
           <p id="description-tag" class="mb-0"><em>Description:</em></p>
           <p class="text-justify"><%= @racket.description %></p>
 
-          <h5>Latest reviews: <a href="#example">(See more reviews)</a></h5>
+          <h5>Latest reviews <a href="#example">(See more reviews)</a></h5>
           <% if @racket.reviews.empty? %>
             <p>There is no review on this racket yet.</p>
           <% else %>
@@ -53,6 +57,7 @@
       </div>
       <div class="mt-4">
         <h5><a id="example"></a>All reviews</h5>
+        <hr>
        <ul class="list-group">
           <% @racket.reviews.reverse.each do |review| %>
             <li class="list-group-item d-flex justify-content-between align-items-center">

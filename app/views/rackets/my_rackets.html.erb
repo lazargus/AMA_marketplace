@@ -20,7 +20,7 @@
           <% end %>
           <% if policy(racket).destroy? %>
             <button id="racket-delete"><i class="fa fa-trash "></i></button>
-            <%= link_to "", racket_path(racket), method: :delete, id: "update-link", class: "hidden" %>
+            <%= link_to "", racket_path(racket), method: :delete, id: "update-link", class: "hidden", remote: true %>
           <% end %>
         </div>
         <% end %>

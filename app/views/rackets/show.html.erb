@@ -14,9 +14,11 @@
           <h5 class="price-tag"><%= @racket.price %>€/day</h5>
           <p id="description-tag" class="mb-0"><em>Description:</em></p>
           <p class="text-justify"><%= @racket.description %></p>
+
           <h5><%= @racket.reviews.each do |racket| %>
           <%= @racket.reviews %>
           <% end %>
+          
           </h5>
         </div>
       </div>

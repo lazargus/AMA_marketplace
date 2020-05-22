@@ -19,9 +19,8 @@
             <% end %>
           <% end %>
           <% if policy(racket).destroy? %>
-            <%= link_to racket_path(racket), method: :delete, data: { confirm: "Are you sure?" } do %>
-              <i class="fa fa-trash "></i>
-            <% end %>
+            <button id="racket-delete"><i class="fa fa-trash "></i></button>
+            <%= link_to "", racket_path(racket), method: :delete, id: "update-link", class: "hidden" %>
           <% end %>
         </div>
         <% end %>

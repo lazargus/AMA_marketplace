@@ -2,7 +2,7 @@ import ScrollReveal from 'scrollreveal'
 
 console.log("hello")
 
-ScrollReveal().reveal('.card-racket', {
+ScrollReveal().reveal('.racket-scrollreveal', {
     delay: 0,
     distance: '20px',
     duration: 1500,
@@ -40,7 +40,7 @@ ScrollReveal().reveal('.card-booking', {
     distance: '20px',
     duration: 1500,
     easing: 'cubic-bezier(0.5, 0, 0, 1)',
-    interval: 200,
+    interval: 100,
     opacity: 0,
     origin: 'bottom',
     rotate: {

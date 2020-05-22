@@ -9,7 +9,7 @@
   <div class="row justify-content-center mb-2 mt-2">
     <div class="card-racket-container">
       <% @rackets.each do |racket| %>
-      <div class="card-racket m-2">
+      <div class="card-racket racket-scrollreveal m-2">
         <% if racket.photo.attached? %>
         <%= cl_image_tag racket.photo.key, height: 300, width: 400, class:'cloudinary-image', alt: "alttext" %>
         <div class="symbols">

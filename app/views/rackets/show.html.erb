@@ -14,16 +14,26 @@
           <h5 class="price-tag"><%= @racket.price %>€/day</h5>
           <p id="description-tag" class="mb-0"><em>Description:</em></p>
           <p class="text-justify"><%= @racket.description %></p>
+
+          <h5><% @racket.reviews.each do |review| %>
+            <% if review.content != "" %>
+            <div>
+              <%= review.rating %>
+              <%= review.content %>
+            </div>
+            <% end %>
+            <% end %>
+
+
+          </h5>
         </div>
       </div>
       <div class="container mt-5">
         <h3>Location:</h3>
         <hr>
         <div class="row mt-4">
-          <div id="map"
-               class="container-map"
-               data-markers="<%= @marker.to_json %>"
-               data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+          <div id="map" class="container-map" data-markers="<%= @marker.to_json %>"
+            data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
           </div>
         </div>
       </div>
@@ -36,5 +46,3 @@
   </div>
   <br>
 </div>
-
-

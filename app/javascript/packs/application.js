@@ -86,4 +86,19 @@ initSweetalert('#rental-accept', {
   }
 });
 
+initSweetalert('#racket-delete', {
+  title: "Delete Racket?",
+  text: "Once deleted, you will not be able to go back!",
+  icon: "warning",
+    buttons: {
+    cancel: true,
+    confirm: true,
+  },
+}, (value) => {
+  if (value) {
+    const link = document.querySelector('#update-link');
+    link.click();
+  }
+});
+
 

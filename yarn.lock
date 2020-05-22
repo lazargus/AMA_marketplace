@@ -2604,15 +2604,9 @@ ee-first@1.1.1:
   integrity sha1-WQxhFWsK4vTwJVcyoViyZrxWsh0=
 
 electron-to-chromium@^1.3.413:
-<<<<<<< HEAD
-  version "1.3.449"
-  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.449.tgz#a9cc945eba23cb484c4511a2dd50bd765d4b6b61"
-  integrity sha512-TZ+zHInrMiKC3bxIcR5QPZOozAFv0iwuuBir7k9cZSbZPI2JZq7PZYSSQSwh02cBIjj7bYWmYFvN6/l4P4sXBQ==
-=======
   version "1.3.450"
   resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.450.tgz#ce783bbea201902e33d95cb776be6d8f4e9825e5"
   integrity sha512-m6iTlzM12aBf0W8E+Lhj8tUsO5bsYXzGkQ7x4VEqLLwziFN5uecajjOKJaIR25xrHYwnwHteHy1yzJ+mN6QTWA==
->>>>>>> master
 
 elliptic@^6.0.0, elliptic@^6.5.2:
   version "6.5.2"

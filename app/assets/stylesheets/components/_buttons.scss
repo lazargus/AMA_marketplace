@@ -18,3 +18,34 @@
   transition: 0.5s;
 }
 
+
+#booking-delete {
+  border-radius: 10px;
+}
+
+#rental-delete {
+  border-radius: 10px;
+
+}
+
+#rental-accept {
+  border-radius: 10px;
+}
+
+.my-bookings-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  margin-top: 30px;
+  width: 160px;
+}
+
+.my-rentals-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  margin-top: 30px;
+  width: 160px;
+}

@@ -3,7 +3,7 @@
       <h1>Add a review to the racket</h1>
     </div>
       <%= simple_form_for [@racket, @review] do |f| %>
-        <%= f.input :content, label: "What did you think about the racket?" %>
+        <%= f.input :content, label: "What did you think about the racket? Tell us everything!", placeholder: "Your review" %>
         <%= f.input :rating, collection: (1..5).to_a, label: "Rate your experience" %>
         <%= f.submit "Send your review" %>
       <% end %>

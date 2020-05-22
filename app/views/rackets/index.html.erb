@@ -20,7 +20,7 @@
         <% if racket.user != current_user %>
           <div class="card-racket m-2">
             <% if racket.photo.attached? %>
-              <%= link_to (cl_image_tag racket.photo.key, height: 200, width: 300, class:'cloudinary-image', alt: "alttext"), racket_path(racket) %>
+              <%= link_to (cl_image_tag racket.photo.key, height: 200, width: 300, class:'cloudinary-image', alt: "alttext"), racket_path(racket), data: { turbolinks: false } %>
             <% end %>
             <h2><%= link_to racket.model, racket_path(racket), data: { turbolinks: false } %></h2>
             <div class="card-racket-infos">

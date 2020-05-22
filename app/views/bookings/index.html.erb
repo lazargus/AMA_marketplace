@@ -27,11 +27,13 @@
             </div>
             <div class="my-bookings-btn">
               <div>
-                <%= link_to "Add a review",  new_racket_review_path(booking.racket), class: "btn btn-primary", id: "add-button", data: { turbolinks: false } %>
+                <% if Date.today > booking.end_date %>
+                  <%= link_to "Add a review",  new_racket_review_path(booking.racket), class: "btn btn-primary", id: "add-button", data: { turbolinks: false }, remote: true %>
+                <% end %>
               </div>
               <% if policy(booking).destroy? %>
                 <button id="booking-delete" class="btn btn-danger">Cancel</button>
-                <%= link_to "", booking_path(booking), method: :delete, id: "booking-delete-link", class: "hidden" %>
+                <%= link_to "", booking_path(booking), method: :delete, id: "booking-delete-link", class: "hidden", remote: true %>
               <% end %>
             </div>
           </div>
@@ -66,20 +68,20 @@
                 <p id="wait-confirm">Waiting for your confirmation ...</p>
               <% end %>
             </div>
-            <div>
+            <div class="my-rentals-btn">
+              <% if !rental.confirmed%>
+                <div>
+                  <% if policy(rental).update? %>
+                    <button id="rental-accept" class="btn btn-success">Accept</button>
+                    <%= link_to "", booking_path(rental), method: :patch, id: "update-link", class: "hidden", remote: true %>
+                  <% end %>
+                </div>
+              <% end %>
               <% if policy(rental).destroy? %>
                 <button id="rental-delete" class="btn btn-danger">Decline</button>
-                <%= link_to "", booking_path(rental), method: :delete, id: "rental-delete-link", class: "hidden" %>
+                <%= link_to "", booking_path(rental), method: :delete, id: "rental-delete-link", class: "hidden", remote: true %>
               <% end %>
             </div>
-            <% if !rental.confirmed%>
-              <div>
-                <% if policy(rental).update? %>
-                  <button id="rental-accept" class="btn btn-success">Accept</button>
-                  <%= link_to "", booking_path(rental), method: :patch, id: "update-link", class: "hidden" %>
-                <% end %>
-              </div>
-            <% end %>
           </div>
         </div>
       </div>
